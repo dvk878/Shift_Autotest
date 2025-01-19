@@ -17,7 +17,7 @@ public class FlyDuck extends TestNGCitrusSpringSupport {
 
     @Test(description = "Полет уточки с правильным (существующим) id и с активными крыльями: ACTIVE", enabled = true)
     @CitrusTest
-    public void ActiveWingsFly(@Optional @CitrusResource TestCaseRunner runner) {
+    public void activeWingsFly(@Optional @CitrusResource TestCaseRunner runner) {
         duck.createDuck(runner, "yellow", "0.15", "rubber", "quack", "ACTIVE");
         runner.$(http().client("http://localhost:2222")
                 .receive()
@@ -31,7 +31,7 @@ public class FlyDuck extends TestNGCitrusSpringSupport {
 
     @Test(description = "Полет уточки с правильным (существующим) id и со связанными крыльями: FIXED", enabled = true)
     @CitrusTest
-    public void FixedWingsFly(@Optional @CitrusResource TestCaseRunner runner) {
+    public void fixedWingsFly(@Optional @CitrusResource TestCaseRunner runner) {
         duck.createDuck(runner, "yellow", "0.15", "rubber", "quack", "FIXED");
         runner.$(http().client("http://localhost:2222")
                 .receive()
@@ -45,7 +45,7 @@ public class FlyDuck extends TestNGCitrusSpringSupport {
 
     @Test(description = "Полет уточки с правильным (существующим) id и с крыльями в неопределенном состоянии: ACTIVE", enabled = true)
     @CitrusTest
-    public void UndefinedWingsFly(@Optional @CitrusResource TestCaseRunner runner) {
+    public void undefinedWingsFly(@Optional @CitrusResource TestCaseRunner runner) {
         duck.createDuck(runner, "yellow", "0.15", "rubber", "quack", "UNDEFINED");
         runner.$(http().client("http://localhost:2222")
                 .receive()

@@ -44,7 +44,7 @@ public class CreateDuck extends TestNGCitrusSpringSupport{
 
     @Test(description = "Создание уточки со значением material=wood",enabled = true)
     @CitrusTest
-    public void CreateWoodenDuck(@Optional @CitrusResource TestCaseRunner runner)
+    public void createWoodenDuck(@Optional @CitrusResource TestCaseRunner runner)
     {
         runner.variable("color", "yellow");
         runner.variable("height", "17.1");

@@ -18,7 +18,7 @@ public class DeleteDuck extends TestNGCitrusSpringSupport {
 
     @Test(description = "Удаление уточки", enabled = true)
     @CitrusTest
-    public void DeleteDuck(@Optional @CitrusResource TestCaseRunner runner) {
+    public void deleteDuck(@Optional @CitrusResource TestCaseRunner runner) {
         duck.createDuck(runner, "yellow", "1.0", "wood", "quack", "FIXED");
         runner.$(http().client("http://localhost:2222")
                 .receive()

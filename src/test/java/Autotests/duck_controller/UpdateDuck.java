@@ -18,7 +18,7 @@ public class UpdateDuck extends TestNGCitrusSpringSupport{
     private final DuckMethods duck = new DuckMethods();
     @Test(description = "Изменение цвета и высоты уточки",enabled = true)
     @CitrusTest
-    public void UpdateColorAndHeight(@Optional @CitrusResource TestCaseRunner runner)
+    public void updateColorAndHeight(@Optional @CitrusResource TestCaseRunner runner)
     {
         duck.createDuck(runner,"yellow","1.0","wood","quack","FIXED");
         runner.$(http().client("http://localhost:2222")
@@ -33,7 +33,7 @@ public class UpdateDuck extends TestNGCitrusSpringSupport{
 
     @Test(description = "Изменение цвета и звука уточки",enabled = true)
     @CitrusTest
-    public void UpdateColorAndSound(@Optional @CitrusResource TestCaseRunner runner)
+    public void updateColorAndSound(@Optional @CitrusResource TestCaseRunner runner)
     {
         duck.createDuck(runner,"yellow","1.0","wood","quack","FIXED");
         runner.$(http().client("http://localhost:2222")

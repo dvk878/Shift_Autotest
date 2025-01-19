@@ -16,7 +16,7 @@ public class QuackDuck extends TestNGCitrusSpringSupport{
     private final DuckMethods duck = new DuckMethods();
     @Test(description = "Корректный звук уточки с правильным (существующим) нечетным id",enabled = true, invocationCount = 2)
     @CitrusTest
-    public void CorrectOddIdQuacking(@Optional @CitrusResource TestCaseRunner runner)
+    public void correctOddIdQuacking(@Optional @CitrusResource TestCaseRunner runner)
     {
         duck.createDuck(runner,"yellow","0.15","rubber","quack","FIXED");
         runner.$(http().client("http://localhost:2222")
@@ -41,7 +41,7 @@ public class QuackDuck extends TestNGCitrusSpringSupport{
 
     @Test(description = "Корректный звук уточки с правильным (существующим) четным id",enabled = true,invocationCount = 2)
     @CitrusTest
-    public void CorrectEvenIdQuacking(@Optional @CitrusResource TestCaseRunner runner)
+    public void correctEvenIdQuacking(@Optional @CitrusResource TestCaseRunner runner)
     {
         duck.createDuck(runner,"yellow","0.15","rubber","quack","FIXED");
         runner.$(http().client("http://localhost:2222")
