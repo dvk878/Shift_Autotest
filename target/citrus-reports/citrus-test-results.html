@@ -116,10 +116,10 @@
             <h1>Tests results (1 Tests)</h1>
             <table id="test-results">
                 <tbody>
-                    <tr class="failure" onmouseover="showTooltip('CreateDuck.createRubberDuckInfo', event);" onmouseout="hideTooltip();">
-    <th>CreateDuck.createRubberDuck
-        <span class="tooltip" id="CreateDuck.createRubberDuckInfo">
-        <b><i>CreateDuck.createRubberDuck</i></b><br/>
+                    <tr class="failure" onmouseover="showTooltip('CreateDuck.CreateWoodenDuckInfo', event);" onmouseout="hideTooltip();">
+    <th>CreateDuck.CreateWoodenDuck
+        <span class="tooltip" id="CreateDuck.CreateWoodenDuckInfo">
+        <b><i>CreateDuck.CreateWoodenDuck</i></b><br/>
         <b>Author:</b> <br/>
         <b>Status:</b> DRAFT<br/>
         <b>Creation Date:</b> <br/>
@@ -130,17 +130,20 @@
     </th>
     <td>FAILURE</td>
 </tr>
-<tr><td colspan="2"><div class="error-detail"><pre>com.consol.citrus.exceptions.CitrusRuntimeException: Failed to get correlation key for 'citrus_message_correlator_HttpClient'
+<tr><td colspan="2"><div class="error-detail"><pre>com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
+{"id":44,"color":"yellow","height":23.0,"material":"wood","sound":"quack","wingsState":"FIXED"} Number of JSON entries not equal for element: '$.', expected '5' but was '6'
  
-	 at com.consol.citrus.message.correlation.PollingCorrelationManager.getCorrelationKey(PollingCorrelationManager.java:96)
-	 at com.consol.citrus.http.client.HttpClient.receive(HttpClient.java:158)
-	 at com.consol.citrus.actions.ReceiveMessageAction.receive(ReceiveMessageAction.java:178)
-	 at com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:160)
+	 at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)
+	 at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:58)
+	 at com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)
+	 at com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:279)
+	 at com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:168)
 	 at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)
 	 at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	 at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	 at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	 at autotests.duck_controller.CreateDuck.createRubberDuck(CreateDuck.java:26)
+	 at autotests.clients.DuckActionsClient.validateResponse(DuckActionsClient.java:95)
+	 at autotests.duck_controller.CreateDuck.CreateWoodenDuck(CreateDuck.java:44)
 	 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	 at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)

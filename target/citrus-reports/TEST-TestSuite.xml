@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="TestSuite" time="0.0" tests="1" errors="0" skipped="0" failures="1">
-    <testcase name="CreateDuck.createRubberDuck" classname="autotests.duck_controller.CreateDuck" time="0.0">
-      <failure type="com.consol.citrus.exceptions.CitrusRuntimeException" message="Failed to get correlation key for &apos;citrus_message_correlator_HttpClient&apos;">
+    <testcase name="CreateDuck.CreateWoodenDuck" classname="autotests.duck_controller.CreateDuck" time="0.0">
+      <failure type="com.consol.citrus.exceptions.ValidationException" message="Failed to validate JSON text:
+{&quot;id&quot;:44,&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:23.0,&quot;material&quot;:&quot;wood&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;FIXED&quot;} Number of JSON entries not equal for element: &apos;$.&apos;, expected &apos;5&apos; but was &apos;6&apos;">
         <![CDATA[
-        com.consol.citrus.exceptions.CitrusRuntimeException: Failed to get correlation key for 'citrus_message_correlator_HttpClient'
-	at com.consol.citrus.message.correlation.PollingCorrelationManager.getCorrelationKey(PollingCorrelationManager.java:96)
-	at com.consol.citrus.http.client.HttpClient.receive(HttpClient.java:158)
-	at com.consol.citrus.actions.ReceiveMessageAction.receive(ReceiveMessageAction.java:178)
-	at com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:160)
+        com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
+{"id":44,"color":"yellow","height":23.0,"material":"wood","sound":"quack","wingsState":"FIXED"} Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:58)
+	at com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)
+	at com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:279)
+	at com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:168)
 	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at autotests.duck_controller.CreateDuck.createRubberDuck(CreateDuck.java:26)
+	at autotests.clients.DuckActionsClient.validateResponse(DuckActionsClient.java:95)
+	at autotests.duck_controller.CreateDuck.CreateWoodenDuck(CreateDuck.java:44)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
@@ -47,6 +51,11 @@
 	at org.testng.TestNG.run(TestNG.java:1067)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal for element: '$.', expected '5' but was '6'
+	at org.springframework.util.Assert.isTrue(Assert.java:121)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:145)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:102)
+	... 44 more
 
         ]]>
       </failure>

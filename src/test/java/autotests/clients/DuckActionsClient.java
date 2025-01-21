@@ -9,7 +9,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 
+import static com.consol.citrus.DefaultTestActionBuilder.action;
+import static com.consol.citrus.dsl.MessageSupport.MessageBodySupport.fromBody;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
+import static java.lang.Double.parseDouble;
 
 @ContextConfiguration(classes = {EndpointConfig.class})
 public class DuckActionsClient extends TestNGCitrusSpringSupport {
@@ -25,7 +28,7 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .queryParam("id", id));
     }
 
-    public void createDuck(TestCaseRunner runner, String color, String height, String material, String sound, String wingsState) {
+    public void createDuck(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
         runner.$(http().client(duckService)
                 .send()
                 .post("/api/duck/create")
@@ -96,6 +99,37 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .body(responseMessage));
     }
+
+    public void getDuckId(TestCaseRunner runner) {
+        runner.$(http().client(duckService)
+                .receive()
+                .response(HttpStatus.OK)
+                .message()
+                .extract(fromBody().expression("$.id", "duckId")));
+    }
+
+    public void evenDuckId(TestCaseRunner runner) {
+        runner.$(
+                action(context -> {
+                    String duckId = context.getVariable("duckId");
+                    double dDuckId = Integer.parseInt(duckId);
+                    if (dDuckId % 2 == 1) {
+                        createDuck(runner, "${color}", parseDouble("23.0"), "${material}", "${sound}", "${wingsState}");
+                    }
+                }));
+    }
+
+    public void oddDuckId(TestCaseRunner runner) {
+        runner.$(
+                action(context -> {
+                    String duckId = context.getVariable("duckId");
+                    double dDuckId = Integer.parseInt(duckId);
+                    if (dDuckId % 2 == 0) {
+                        createDuck(runner, "${color}", parseDouble("23.0"), "${material}", "${sound}", "${wingsState}");
+                    }
+                }));
+    }
+
 
 
 }
