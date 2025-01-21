@@ -23,7 +23,7 @@ public class CreateDuck extends DuckActionsClient {
         runner.variable("sound", "quack");
         runner.variable("wingsState", "FIXED");
         createDuck(runner, "${color}", "${height}", "${material}", "${sound}", "${wingsState}");
-        runner.$(http().client(duckService)
+        runner.$(http().client("http://localhost:2222")
                 .receive()
                 .response(HttpStatus.OK)
                 .message()
