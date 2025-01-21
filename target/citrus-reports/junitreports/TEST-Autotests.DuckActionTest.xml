@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Autotests.DuckActionTest" time="0.0" tests="18" errors="0" skipped="0" failures="9">
-    <testcase name="DuckActionTest.ActiveWingsFly" classname="Autotests.DuckActionTest" time="0.0"/>
-    <testcase name="DuckActionTest.CorrectEvenIdQuacking" classname="Autotests.DuckActionTest" time="0.0">
+<testsuite name="autotests.DuckActionTest" time="0.0" tests="18" errors="0" skipped="0" failures="9">
+    <testcase name="DuckActionTest.ActiveWingsFly" classname="autotests.DuckActionTest" time="0.0"/>
+    <testcase name="DuckActionTest.CorrectEvenIdQuacking" classname="autotests.DuckActionTest" time="0.0">
       <failure type="java.lang.AssertionError" message="ID is even, not odd: 209">
-        <![CDATA[
+          <![CDATA[
         java.lang.AssertionError: ID is even, not odd: 209
-	at Autotests.DuckActionTest.lambda$CorrectEvenIdQuacking$1(DuckActionTest.java:153)
+	at autotests.DuckActionTest.lambda$CorrectEvenIdQuacking$1(DuckActionTest.java:153)
 	at com.consol.citrus.DefaultTestActionBuilder$1.doExecute(DefaultTestActionBuilder.java:54)
 	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at Autotests.DuckActionTest.CorrectEvenIdQuacking(DuckActionTest.java:148)
+	at autotests.DuckActionTest.CorrectEvenIdQuacking(DuckActionTest.java:148)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
@@ -50,10 +50,10 @@
         ]]>
       </failure>
     </testcase>
-    <testcase name="DuckActionTest.CorrectEvenIdQuacking" classname="Autotests.DuckActionTest" time="0.0">
+    <testcase name="DuckActionTest.CorrectEvenIdQuacking" classname="autotests.DuckActionTest" time="0.0">
       <failure type="com.consol.citrus.exceptions.ValidationException" message="Failed to validate JSON text:
 {&quot;sound&quot;:&quot;moo&quot;} Values not equal for entry: &apos;sound&apos;, expected &apos;quack&apos; but was &apos;moo&apos;">
-        <![CDATA[
+          <![CDATA[
         com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
 {"sound":"moo"} Values not equal for entry: 'sound', expected 'quack' but was 'moo'
 	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)
@@ -65,8 +65,8 @@
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at Autotests.DuckActionTest.validateResponse(DuckActionTest.java:336)
-	at Autotests.DuckActionTest.CorrectEvenIdQuacking(DuckActionTest.java:157)
+	at autotests.DuckActionTest.validateResponse(DuckActionTest.java:336)
+	at autotests.DuckActionTest.CorrectEvenIdQuacking(DuckActionTest.java:157)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
@@ -110,18 +110,18 @@ Caused by: java.lang.IllegalArgumentException: Values not equal for entry: 'soun
         ]]>
       </failure>
     </testcase>
-    <testcase name="DuckActionTest.CorrectOddIdQuacking" classname="Autotests.DuckActionTest" time="0.0"/>
-    <testcase name="DuckActionTest.CorrectOddIdQuacking" classname="Autotests.DuckActionTest" time="0.0">
+    <testcase name="DuckActionTest.CorrectOddIdQuacking" classname="autotests.DuckActionTest" time="0.0"/>
+    <testcase name="DuckActionTest.CorrectOddIdQuacking" classname="autotests.DuckActionTest" time="0.0">
       <failure type="java.lang.AssertionError" message="ID is even, not odd: 212">
-        <![CDATA[
+          <![CDATA[
         java.lang.AssertionError: ID is even, not odd: 212
-	at Autotests.DuckActionTest.lambda$CorrectOddIdQuacking$0(DuckActionTest.java:129)
+	at autotests.DuckActionTest.lambda$CorrectOddIdQuacking$0(DuckActionTest.java:129)
 	at com.consol.citrus.DefaultTestActionBuilder$1.doExecute(DefaultTestActionBuilder.java:54)
 	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at Autotests.DuckActionTest.CorrectOddIdQuacking(DuckActionTest.java:124)
+	at autotests.DuckActionTest.CorrectOddIdQuacking(DuckActionTest.java:124)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
@@ -160,16 +160,16 @@ Caused by: java.lang.IllegalArgumentException: Values not equal for entry: 'soun
         ]]>
       </failure>
     </testcase>
-    <testcase name="DuckActionTest.CreateWoodenDuck" classname="Autotests.DuckActionTest" time="0.0"/>
-    <testcase name="DuckActionTest.DeleteDuck" classname="Autotests.DuckActionTest" time="0.0"/>
-    <testcase name="DuckActionTest.FixedWingsFly" classname="Autotests.DuckActionTest" time="0.0"/>
-    <testcase name="DuckActionTest.UndefinedWingsFly" classname="Autotests.DuckActionTest" time="0.0"/>
-    <testcase name="DuckActionTest.UpdateColorAndHeight" classname="Autotests.DuckActionTest" time="0.0"/>
-    <testcase name="DuckActionTest.UpdateColorAndSound" classname="Autotests.DuckActionTest" time="0.0"/>
-    <testcase name="DuckActionTest.createRubberDuck" classname="Autotests.DuckActionTest" time="0.0"/>
-    <testcase name="DuckActionTest.existingDuckIdSwim" classname="Autotests.DuckActionTest" time="0.0">
+    <testcase name="DuckActionTest.CreateWoodenDuck" classname="autotests.DuckActionTest" time="0.0"/>
+    <testcase name="DuckActionTest.DeleteDuck" classname="autotests.DuckActionTest" time="0.0"/>
+    <testcase name="DuckActionTest.FixedWingsFly" classname="autotests.DuckActionTest" time="0.0"/>
+    <testcase name="DuckActionTest.UndefinedWingsFly" classname="autotests.DuckActionTest" time="0.0"/>
+    <testcase name="DuckActionTest.UpdateColorAndHeight" classname="autotests.DuckActionTest" time="0.0"/>
+    <testcase name="DuckActionTest.UpdateColorAndSound" classname="autotests.DuckActionTest" time="0.0"/>
+    <testcase name="DuckActionTest.createRubberDuck" classname="autotests.DuckActionTest" time="0.0"/>
+    <testcase name="DuckActionTest.existingDuckIdSwim" classname="autotests.DuckActionTest" time="0.0">
       <failure type="com.consol.citrus.exceptions.ValidationException" message="Validation failed: Values not equal for header element &apos;citrus_http_reason_phrase&apos;, expected &apos;OK&apos; but was &apos;NOT_FOUND&apos;">
-        <![CDATA[
+          <![CDATA[
         com.consol.citrus.exceptions.ValidationException: Validation failed: Values not equal for header element 'citrus_http_reason_phrase', expected 'OK' but was 'NOT_FOUND'
 	at com.consol.citrus.validation.DefaultHeaderValidator.validateHeader(DefaultHeaderValidator.java:79)
 	at com.consol.citrus.validation.DefaultMessageHeaderValidator.validateMessage(DefaultMessageHeaderValidator.java:101)
@@ -181,8 +181,8 @@ Caused by: java.lang.IllegalArgumentException: Values not equal for entry: 'soun
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at Autotests.DuckActionTest.validateResponse(DuckActionTest.java:336)
-	at Autotests.DuckActionTest.existingDuckIdSwim(DuckActionTest.java:213)
+	at autotests.DuckActionTest.validateResponse(DuckActionTest.java:336)
+	at autotests.DuckActionTest.existingDuckIdSwim(DuckActionTest.java:213)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
@@ -225,9 +225,9 @@ Caused by: java.lang.IllegalArgumentException: Values not equal for header eleme
         ]]>
       </failure>
     </testcase>
-    <testcase name="DuckActionTest.nonexistentDuckIdSwim" classname="Autotests.DuckActionTest" time="0.0">
+    <testcase name="DuckActionTest.nonexistentDuckIdSwim" classname="autotests.DuckActionTest" time="0.0">
       <failure type="com.consol.citrus.exceptions.ValidationException" message="Validation failed: Values not equal for header element &apos;citrus_http_reason_phrase&apos;, expected &apos;OK&apos; but was &apos;NOT_FOUND&apos;">
-        <![CDATA[
+          <![CDATA[
         com.consol.citrus.exceptions.ValidationException: Validation failed: Values not equal for header element 'citrus_http_reason_phrase', expected 'OK' but was 'NOT_FOUND'
 	at com.consol.citrus.validation.DefaultHeaderValidator.validateHeader(DefaultHeaderValidator.java:79)
 	at com.consol.citrus.validation.DefaultMessageHeaderValidator.validateMessage(DefaultMessageHeaderValidator.java:101)
@@ -239,8 +239,8 @@ Caused by: java.lang.IllegalArgumentException: Values not equal for header eleme
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at Autotests.DuckActionTest.validateResponse(DuckActionTest.java:336)
-	at Autotests.DuckActionTest.nonexistentDuckIdSwim(DuckActionTest.java:228)
+	at autotests.DuckActionTest.validateResponse(DuckActionTest.java:336)
+	at autotests.DuckActionTest.nonexistentDuckIdSwim(DuckActionTest.java:228)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
@@ -283,10 +283,10 @@ Caused by: java.lang.IllegalArgumentException: Values not equal for header eleme
         ]]>
       </failure>
     </testcase>
-    <testcase name="DuckActionTest.showEvenIdWoodenDuck" classname="Autotests.DuckActionTest" time="0.0">
+    <testcase name="DuckActionTest.showEvenIdWoodenDuck" classname="autotests.DuckActionTest" time="0.0">
       <failure type="com.consol.citrus.exceptions.ValidationException" message="Failed to validate JSON text:
 {} Number of JSON entries not equal for element: &apos;$.&apos;, expected &apos;5&apos; but was &apos;0&apos;">
-        <![CDATA[
+          <![CDATA[
         com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
 {} Number of JSON entries not equal for element: '$.', expected '5' but was '0'
 	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)
@@ -298,7 +298,7 @@ Caused by: java.lang.IllegalArgumentException: Values not equal for header eleme
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at Autotests.DuckActionTest.showEvenIdWoodenDuck(DuckActionTest.java:255)
+	at autotests.DuckActionTest.showEvenIdWoodenDuck(DuckActionTest.java:255)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
@@ -342,17 +342,17 @@ Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal 
         ]]>
       </failure>
     </testcase>
-    <testcase name="DuckActionTest.showEvenIdWoodenDuck" classname="Autotests.DuckActionTest" time="0.0">
+    <testcase name="DuckActionTest.showEvenIdWoodenDuck" classname="autotests.DuckActionTest" time="0.0">
       <failure type="java.lang.AssertionError" message="ID is odd, not even: 223">
-        <![CDATA[
+          <![CDATA[
         java.lang.AssertionError: ID is odd, not even: 223
-	at Autotests.DuckActionTest.lambda$showEvenIdWoodenDuck$2(DuckActionTest.java:251)
+	at autotests.DuckActionTest.lambda$showEvenIdWoodenDuck$2(DuckActionTest.java:251)
 	at com.consol.citrus.DefaultTestActionBuilder$1.doExecute(DefaultTestActionBuilder.java:54)
 	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at Autotests.DuckActionTest.showEvenIdWoodenDuck(DuckActionTest.java:246)
+	at autotests.DuckActionTest.showEvenIdWoodenDuck(DuckActionTest.java:246)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
@@ -391,17 +391,17 @@ Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal 
         ]]>
       </failure>
     </testcase>
-    <testcase name="DuckActionTest.showOddIdRubberDuck" classname="Autotests.DuckActionTest" time="0.0">
+    <testcase name="DuckActionTest.showOddIdRubberDuck" classname="autotests.DuckActionTest" time="0.0">
       <failure type="java.lang.AssertionError" message="ID is even, not odd: 224">
-        <![CDATA[
+          <![CDATA[
         java.lang.AssertionError: ID is even, not odd: 224
-	at Autotests.DuckActionTest.lambda$showOddIdRubberDuck$3(DuckActionTest.java:288)
+	at autotests.DuckActionTest.lambda$showOddIdRubberDuck$3(DuckActionTest.java:288)
 	at com.consol.citrus.DefaultTestActionBuilder$1.doExecute(DefaultTestActionBuilder.java:54)
 	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at Autotests.DuckActionTest.showOddIdRubberDuck(DuckActionTest.java:283)
+	at autotests.DuckActionTest.showOddIdRubberDuck(DuckActionTest.java:283)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
@@ -440,10 +440,10 @@ Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal 
         ]]>
       </failure>
     </testcase>
-    <testcase name="DuckActionTest.showOddIdRubberDuck" classname="Autotests.DuckActionTest" time="0.0">
+    <testcase name="DuckActionTest.showOddIdRubberDuck" classname="autotests.DuckActionTest" time="0.0">
       <failure type="com.consol.citrus.exceptions.ValidationException" message="Failed to validate JSON text:
 {&quot;color&quot;:&quot;yellow&quot;,&quot;height&quot;:2300.0,&quot;material&quot;:&quot;rubber&quot;,&quot;sound&quot;:&quot;quack&quot;,&quot;wingsState&quot;:&quot;FIXED&quot;} Values not equal for entry: &apos;height&apos;, expected &apos;23.0&apos; but was &apos;2300.0&apos;">
-        <![CDATA[
+          <![CDATA[
         com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
 {"color":"yellow","height":2300.0,"material":"rubber","sound":"quack","wingsState":"FIXED"} Values not equal for entry: 'height', expected '23.0' but was '2300.0'
 	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)
@@ -455,7 +455,7 @@ Caused by: java.lang.IllegalArgumentException: Number of JSON entries not equal 
 	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
 	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
 	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
-	at Autotests.DuckActionTest.showOddIdRubberDuck(DuckActionTest.java:292)
+	at autotests.DuckActionTest.showOddIdRubberDuck(DuckActionTest.java:292)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)

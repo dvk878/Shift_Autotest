@@ -1,42 +1,32 @@
-package Autotests.duck_controller;
+package autotests.clients;
+
+import autotests.EndpointConfig;
 import com.consol.citrus.TestCaseRunner;
-import com.consol.citrus.annotations.CitrusResource;
-import com.consol.citrus.annotations.CitrusTest;
+import com.consol.citrus.http.client.HttpClient;
 import com.consol.citrus.testng.spring.TestNGCitrusSpringSupport;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Test;
+import org.springframework.test.context.ContextConfiguration;
 
-import static com.consol.citrus.DefaultTestActionBuilder.action;
-import static com.consol.citrus.dsl.MessageSupport.MessageBodySupport.fromBody;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
-public class DeleteDuck extends TestNGCitrusSpringSupport{
 
-    @Test(description = "Удаление уточки",enabled = true)
-    @CitrusTest
-    public void DeleteDuck(@Optional @CitrusResource TestCaseRunner runner)
-    {
-        createDuck(runner,"yellow","1.0","wood","quack","FIXED");
-        runner.$(http().client("http://localhost:2222")
-                .receive()
-                .response(HttpStatus.OK)
-                .message()
-                .extract(fromBody().expression("$.id", "duckId")));
-        deleteDuck(runner,"${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"Duck is deleted\"\n" + "}");
-    }
+@ContextConfiguration(classes = {EndpointConfig.class})
+public class DuckActionsClient extends TestNGCitrusSpringSupport {
 
+    @Autowired
+    protected HttpClient duckService;
 
+    //�����, ������!
     public void duckSwim(TestCaseRunner runner, String id) {
-        runner.$(http().client("http://localhost:2222")
+        runner.$(http().client(duckService)
                 .send()
                 .get("/api/duck/action/swim")
                 .queryParam("id", id));
     }
 
     public void createDuck(TestCaseRunner runner, String color, String height, String material, String sound, String wingsState) {
-        runner.$(http().client("http://localhost:2222")
+        runner.$(http().client(duckService)
                 .send()
                 .post("/api/duck/create")
                 .message()
@@ -50,7 +40,7 @@ public class DeleteDuck extends TestNGCitrusSpringSupport{
     }
 
     public void deleteDuck(TestCaseRunner runner, String id) {
-        runner.$(http().client("http://localhost:2222")
+        runner.$(http().client(duckService)
                 .send()
                 .delete("/api/duck/delete")
                 .message()
@@ -58,7 +48,7 @@ public class DeleteDuck extends TestNGCitrusSpringSupport{
                 .queryParam("id",id));
     }
     public void validateResponse(TestCaseRunner runner, String responseMessage) {
-        runner.$(http().client("http://localhost:2222")
+        runner.$(http().client(duckService)
                 .receive()
                 .response(HttpStatus.OK)
                 .message()
@@ -67,7 +57,7 @@ public class DeleteDuck extends TestNGCitrusSpringSupport{
     }
 
     public void updateDuck(TestCaseRunner runner,String id, String color, String height, String material, String sound, String wingsState) {
-        runner.$(http().client("http://localhost:2222")
+        runner.$(http().client(duckService)
                 .send()
                 .put("/api/duck/update")
                 .message()
@@ -82,7 +72,7 @@ public class DeleteDuck extends TestNGCitrusSpringSupport{
     }
 
     public void quackDuck(TestCaseRunner runner,String id, String repetitionCount, String soundCount) {
-        runner.$(http().client("http://localhost:2222")
+        runner.$(http().client(duckService)
                 .send()
                 .get("/api/duck/action/quack")
                 .message()
@@ -94,17 +84,18 @@ public class DeleteDuck extends TestNGCitrusSpringSupport{
     }
 
     public void duckFly(TestCaseRunner runner, String id) {
-        runner.$(http().client("http://localhost:2222")
+        runner.$(http().client(duckService)
                 .send()
                 .get("/api/duck/action/fly")
                 .queryParam("id", id));
     }
 
     public void showProperties(TestCaseRunner runner, String id) {
-        runner.$(http().client("http://localhost:2222")
+        runner.$(http().client(duckService)
                 .send()
                 .get("/api/duck/action/properties")
                 .queryParam("id", id));
     }
-}
 
+
+}

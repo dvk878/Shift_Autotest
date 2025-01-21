@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestSuite" time="0.0" tests="3" errors="0" skipped="0" failures="0">
-    <testcase name="FlyDuck.ActiveWingsFly" classname="Autotests.duck_action_controller.FlyDuck" time="0.0"/>
-    <testcase name="FlyDuck.FixedWingsFly" classname="Autotests.duck_action_controller.FlyDuck" time="0.0"/>
-    <testcase name="FlyDuck.UndefinedWingsFly" classname="Autotests.duck_action_controller.FlyDuck" time="0.0"/>
+<testsuite name="TestSuite" time="0.0" tests="2" errors="0" skipped="0" failures="0">
+    <testcase name="CreateDuck.CreateWoodenDuck" classname="autotests.duck_controller.CreateDuck" time="0.0"/>
+    <testcase name="CreateDuck.createRubberDuck" classname="autotests.duck_controller.CreateDuck" time="0.0"/>
 </testsuite>
