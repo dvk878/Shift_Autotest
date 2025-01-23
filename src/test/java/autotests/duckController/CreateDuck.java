@@ -1,4 +1,4 @@
-package autotests.duck_controller;
+package autotests.duckController;
 import autotests.clients.DuckActionsClient;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
@@ -13,20 +13,21 @@ public class CreateDuck extends DuckActionsClient {
     public void createRubberDuck(@Optional @CitrusResource TestCaseRunner runner) {
 
         runner.variable("color", "yellow");
-        runner.variable("height", "23.0");
+        runner.variable("height", 23.0);
         runner.variable("material", "rubber");
         runner.variable("sound", "quack");
         runner.variable("wingsState", "FIXED");
 
-        createDuck(runner, "${color}", Double.parseDouble("23.0"), "${material}", "${sound}", "${wingsState}");
+        createDuck(runner, "${color}", 23.0, "${material}", "${sound}", "${wingsState}");
         validateResponse(runner,
-                "{" + "  \"color\": \"" + "${color}" + "\","
-                                + "  \"height\": " + 23.0 + ","
-                                + "  \"material\": \"" + "${material}" + "\","
-                                + "  \"sound\": \"" + "${sound}" + "\","
-                                + "  \"wingsState\": \"" +"${wingsState}"
-                                + "\"" + "}");
-        getDuckId(runner);
+                "{"
+                        + "  \"id\": " + "${duckId}" + ","
+                        + "  \"color\": \"" + "${color}" + "\","
+                        + "  \"height\": " + "${height}" + ","
+                        + "  \"material\": \"" + "${material}" + "\","
+                        + "  \"sound\": \"" + "${sound}" + "\","
+                        + "  \"wingsState\": \"" +"${wingsState}"
+                        + "\"" + "}");
         deleteDuck(runner, "${duckId}");
     }
 
@@ -35,20 +36,22 @@ public class CreateDuck extends DuckActionsClient {
     public void CreateWoodenDuck(@Optional @CitrusResource TestCaseRunner runner) {
 
         runner.variable("color", "yellow");
-        runner.variable("height", "23.0");
+        runner.variable("height", 23.0);
         runner.variable("material", "wood");
         runner.variable("sound", "quack");
         runner.variable("wingsState", "FIXED");
 
-        createDuck(runner, "${color}", Double.parseDouble("23.0"), "${material}", "${sound}", "${wingsState}");
+        createDuck(runner, "${color}", 23, "${material}", "${sound}", "${wingsState}");
         validateResponse(runner,
-                "{" + "  \"color\": \"" + "${color}" + "\","
-                        + "  \"height\": " + 23.0 + ","
+                "{"
+                        + "  \"id\": " + "${duckId}" + ","
+                        + "  \"color\": \"" + "${color}" + "\","
+                        + "  \"height\": " + "${height}" + ","
                         + "  \"material\": \"" + "${material}" + "\","
                         + "  \"sound\": \"" + "${sound}" + "\","
                         + "  \"wingsState\": \"" +"${wingsState}"
                         + "\"" + "}");
-        getDuckId(runner);
+
         deleteDuck(runner, "${duckId}");
 
     }

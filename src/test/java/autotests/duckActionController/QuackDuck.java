@@ -1,12 +1,10 @@
-package autotests.duck_action_controller;
+package autotests.duckActionController;
 import autotests.clients.DuckActionsClient;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-
-import static com.consol.citrus.DefaultTestActionBuilder.action;
 
 public class QuackDuck extends DuckActionsClient {
 

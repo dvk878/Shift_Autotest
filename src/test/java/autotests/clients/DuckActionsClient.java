@@ -20,14 +20,7 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
     @Autowired
     protected HttpClient duckService;
 
-    //�����, ������!
-    public void duckSwim(TestCaseRunner runner, String id) {
-        runner.$(http().client(duckService)
-                .send()
-                .get("/api/duck/action/swim")
-                .queryParam("id", id));
-    }
-
+    //СRUD endpoints
     public void createDuck(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
         runner.$(http().client(duckService)
                 .send()
@@ -65,6 +58,15 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
 
     }
 
+    //Duck actinons endpoints
+
+    public void duckSwim(TestCaseRunner runner, String id) {
+        runner.$(http().client(duckService)
+                .send()
+                .get("/api/duck/action/swim")
+                .queryParam("id", id));
+    }
+
     public void quackDuck(TestCaseRunner runner,String id, String repetitionCount, String soundCount) {
         runner.$(http().client(duckService)
                 .send()
@@ -91,14 +93,20 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .queryParam("id", id));
     }
 
+    //Validation
+
     public void validateResponse(TestCaseRunner runner, String responseMessage) {
         runner.$(http().client(duckService)
                 .receive()
                 .response(HttpStatus.OK)
                 .message()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .extract(fromBody().expression("$.id", "duckId"))
                 .body(responseMessage));
     }
+
+
+    //Duck id computing
 
     public void getDuckId(TestCaseRunner runner) {
         runner.$(http().client(duckService)
@@ -108,6 +116,7 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .extract(fromBody().expression("$.id", "duckId")));
     }
 
+    //Odd or even id
     public void evenDuckId(TestCaseRunner runner) {
         runner.$(
                 action(context -> {

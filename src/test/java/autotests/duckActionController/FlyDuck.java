@@ -1,4 +1,4 @@
-package autotests.duck_action_controller;
+package autotests.duckActionController;
 import autotests.clients.DuckActionsClient;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
@@ -34,7 +34,7 @@ public class FlyDuck extends DuckActionsClient {
         createDuck(runner, "yellow", 0.15, "rubber", "quack", "UNDEFINED");
         getDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"-\"\n" + "}");
+        validateResponse(runner, "{\n" + "  \"message\": \"Wings are not detected :(\"\n" + "}");
         deleteDuck(runner, "${duckId}");
     }
 

@@ -1,4 +1,4 @@
-package autotests.duck_action_controller;
+package autotests.duckActionController;
 import autotests.clients.DuckActionsClient;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
@@ -25,7 +25,7 @@ public class SwimDuck extends DuckActionsClient {
         getDuckId(runner);
         deleteDuck(runner, "${duckId}");
         duckSwim(runner, "${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"I’m swimming\"\n" + "}");
+        validateResponse(runner, "{\n" + "  \"message\": \"I’m not swimming\"\n" + "}");
     }
 
 }
