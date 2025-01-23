@@ -19,7 +19,7 @@ public class CreateDuck extends DuckActionsClient {
         runner.variable("wingsState", "FIXED");
 
         createDuck(runner, "${color}", 23.0, "${material}", "${sound}", "${wingsState}");
-        validateResponse(runner,
+        validateResponseOk(runner,
                 "{"
                         + "  \"id\": " + "${duckId}" + ","
                         + "  \"color\": \"" + "${color}" + "\","
@@ -42,7 +42,7 @@ public class CreateDuck extends DuckActionsClient {
         runner.variable("wingsState", "FIXED");
 
         createDuck(runner, "${color}", 23, "${material}", "${sound}", "${wingsState}");
-        validateResponse(runner,
+        validateResponseOk(runner,
                 "{"
                         + "  \"id\": " + "${duckId}" + ","
                         + "  \"color\": \"" + "${color}" + "\","

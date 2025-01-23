@@ -14,7 +14,7 @@ public class FlyDuck extends DuckActionsClient {
         createDuck(runner, "yellow", 0.15, "rubber", "quack", "ACTIVE");
         getDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"I am flying\"\n" + "}");
+        validateResponseOk(runner, "{\n" + "  \"message\": \"I am flying\"\n" + "}");
         deleteDuck(runner, "${duckId}");
     }
 
@@ -24,7 +24,7 @@ public class FlyDuck extends DuckActionsClient {
         createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
         getDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"I can't fly\"\n" + "}");
+        validateResponseOk(runner, "{\n" + "  \"message\": \"I can't fly\"\n" + "}");
         deleteDuck(runner, "${duckId}");
     }
 
@@ -34,7 +34,7 @@ public class FlyDuck extends DuckActionsClient {
         createDuck(runner, "yellow", 0.15, "rubber", "quack", "UNDEFINED");
         getDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"Wings are not detected :(\"\n" + "}");
+        validateResponseOk(runner, "{\n" + "  \"message\": \"Wings are not detected :(\"\n" + "}");
         deleteDuck(runner, "${duckId}");
     }
 

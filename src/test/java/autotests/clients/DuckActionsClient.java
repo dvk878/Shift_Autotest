@@ -95,7 +95,7 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
 
     //Validation
 
-    public void validateResponse(TestCaseRunner runner, String responseMessage) {
+    public void validateResponseOk(TestCaseRunner runner, String responseMessage) {
         runner.$(http().client(duckService)
                 .receive()
                 .response(HttpStatus.OK)
@@ -104,6 +104,16 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .extract(fromBody().expression("$.id", "duckId"))
                 .body(responseMessage));
     }
+
+    public void validateResponseNotFound(TestCaseRunner runner, String responseMessage) {
+        runner.$(http().client(duckService)
+                .receive()
+                .response(HttpStatus.NOT_FOUND)
+                .message()
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .body(responseMessage));
+    }
+
 
 
     //Duck id computing

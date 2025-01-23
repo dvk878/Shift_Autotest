@@ -24,7 +24,7 @@ public class PropertiesDuck extends DuckActionsClient {
         getDuckId(runner);
         evenDuckId(runner);
         showProperties(runner, "${duckId}");
-        validateResponse(runner,
+        validateResponseOk(runner,
                 "{" + "  \"color\": \"" + "${color}" + "\","
                         + "  \"height\": " + 23.0 + ","
                         + "  \"material\": \"" + "${material}" + "\","
@@ -48,7 +48,7 @@ public class PropertiesDuck extends DuckActionsClient {
         getDuckId(runner);
         oddDuckId(runner);
         showProperties(runner, "${duckId}");
-        validateResponse(runner,
+        validateResponseOk(runner,
                 "{" + "  \"color\": \"" + "${color}" + "\","
                         + "  \"height\": " + 23.0 + ","
                         + "  \"material\": \"" + "${material}" + "\","

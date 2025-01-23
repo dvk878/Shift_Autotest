@@ -5,3 +5,5 @@
 target/citrus-reports
 
 build/tmp/compileTestJava
+
+Shift_Autotest.iml

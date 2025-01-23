@@ -14,7 +14,7 @@ public class SwimDuck extends DuckActionsClient {
         createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
         getDuckId(runner);
         duckSwim(runner, "${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"I’m swimming\"\n" + "}");
+        validateResponseOk(runner, "{\n" + "  \"message\": \"I’m swimming\"\n" + "}");
         deleteDuck(runner, "${duckId}");
     }
 
@@ -25,7 +25,7 @@ public class SwimDuck extends DuckActionsClient {
         getDuckId(runner);
         deleteDuck(runner, "${duckId}");
         duckSwim(runner, "${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"I’m not swimming\"\n" + "}");
+        validateResponseNotFound(runner, "{\n" + "  \"message\": \"Paws are not found ((((\"\n" + "}");
     }
 
 }

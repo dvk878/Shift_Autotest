@@ -15,7 +15,7 @@ public class QuackDuck extends DuckActionsClient {
         getDuckId(runner);
         oddDuckId(runner);
         quackDuck(runner, "${duckId}", "1", "1");
-        validateResponse(runner, "{\n" + "  \"sound\": \"quack\"\n" + "}");
+        validateResponseOk(runner, "{\n" + "  \"sound\": \"quack\"\n" + "}");
         deleteDuck(runner, "${duckId}");
     }
 
@@ -27,7 +27,7 @@ public class QuackDuck extends DuckActionsClient {
         getDuckId(runner);
         evenDuckId(runner);
         quackDuck(runner, "${duckId}", "1", "1");
-        validateResponse(runner, "{\n" + "  \"sound\": \"quack\"\n" + "}");
+        validateResponseOk(runner, "{\n" + "  \"sound\": \"quack\"\n" + "}");
         deleteDuck(runner, "${duckId}");
     }
 
