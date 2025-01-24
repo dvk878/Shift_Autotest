@@ -3,8 +3,11 @@ package autotests.clients;
 import autotests.EndpointConfig;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.http.client.HttpClient;
+import com.consol.citrus.message.builder.ObjectMappingPayloadBuilder;
 import com.consol.citrus.testng.spring.TestNGCitrusSpringSupport;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
@@ -95,7 +98,7 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
 
     //Validation
 
-    public void validateResponseOk(TestCaseRunner runner, String responseMessage) {
+    public void validateResponseString(TestCaseRunner runner, String responseMessage) {
         runner.$(http().client(duckService)
                 .receive()
                 .response(HttpStatus.OK)
@@ -103,6 +106,43 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .extract(fromBody().expression("$.id", "duckId"))
                 .body(responseMessage));
+    }
+
+    public void validateResponseOk(TestCaseRunner runner) {
+        runner.$(http().client(duckService)
+                .receive()
+                .response(HttpStatus.OK)
+                .message()
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .extract(fromBody().expression("$.id", "duckId"))
+                .body("{"
+                        + "  \"id\": " + "${duckId}" + ","
+                        + "  \"color\": \"" + "${color}" + "\","
+                        + "  \"height\": " + "${height}" + ","
+                        + "  \"material\": \"" + "${material}" + "\","
+                        + "  \"sound\": \"" + "${sound}" + "\","
+                        + "  \"wingsState\": \"" +"${wingsState}"
+                        + "\"" + "}"));
+    }
+
+    public void validateResponseOk(TestCaseRunner runner,String expectedPayload) {
+        runner.$(http().client(duckService)
+                .receive()
+                .response(HttpStatus.OK)
+                .message()
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .extract(fromBody().expression("$.id", "duckId"))
+                .body(new ClassPathResource(expectedPayload)));
+    }
+
+    public void validateResponseOk(TestCaseRunner runner, Object expectedPayload) {
+        runner.$(http().client(duckService)
+                .receive()
+                .response(HttpStatus.OK)
+                .message()
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .extract(fromBody().expression("$.id", "duckId"))
+                .body(new ObjectMappingPayloadBuilder(expectedPayload,new ObjectMapper())));
     }
 
     public void validateResponseNotFound(TestCaseRunner runner, String responseMessage) {

@@ -1,5 +1,6 @@
 package autotests.duckController;
 import autotests.clients.DuckActionsClient;
+import autotests.payloads.CreateDuckPayload;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -7,6 +8,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
 public class CreateDuck extends DuckActionsClient {
+
 
     @Test(description = "Создание уточки со значением material=rubber", enabled = true)
     @CitrusTest
@@ -19,15 +21,7 @@ public class CreateDuck extends DuckActionsClient {
         runner.variable("wingsState", "FIXED");
 
         createDuck(runner, "${color}", 23.0, "${material}", "${sound}", "${wingsState}");
-        validateResponseOk(runner,
-                "{"
-                        + "  \"id\": " + "${duckId}" + ","
-                        + "  \"color\": \"" + "${color}" + "\","
-                        + "  \"height\": " + "${height}" + ","
-                        + "  \"material\": \"" + "${material}" + "\","
-                        + "  \"sound\": \"" + "${sound}" + "\","
-                        + "  \"wingsState\": \"" +"${wingsState}"
-                        + "\"" + "}");
+        validateResponseOk(runner);
         deleteDuck(runner, "${duckId}");
     }
 
@@ -42,15 +36,7 @@ public class CreateDuck extends DuckActionsClient {
         runner.variable("wingsState", "FIXED");
 
         createDuck(runner, "${color}", 23, "${material}", "${sound}", "${wingsState}");
-        validateResponseOk(runner,
-                "{"
-                        + "  \"id\": " + "${duckId}" + ","
-                        + "  \"color\": \"" + "${color}" + "\","
-                        + "  \"height\": " + "${height}" + ","
-                        + "  \"material\": \"" + "${material}" + "\","
-                        + "  \"sound\": \"" + "${sound}" + "\","
-                        + "  \"wingsState\": \"" +"${wingsState}"
-                        + "\"" + "}");
+        validateResponseOk(runner);
 
         deleteDuck(runner, "${duckId}");
 

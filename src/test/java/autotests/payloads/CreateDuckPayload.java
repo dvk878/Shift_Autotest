@@ -11,23 +11,23 @@ import lombok.experimental.Accessors;
 @Setter
 @Accessors(fluent = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class PetStoreOrder {
+public class CreateDuckPayload {
 
+    @JsonProperty
+    private String color;
+
+    @JsonProperty
+    private double height;
     @JsonProperty
     private int id;
+    @JsonProperty
+    private String material;
 
     @JsonProperty
-    private int petId;
-    @JsonProperty
-    private int quantity;
-    @JsonProperty
-    private String shipDate;
+    private String sound;
 
     @JsonProperty
-    private String status;
-
-    @JsonProperty
-    private boolean complete;
+    private String wingsState;
 
 
 }
