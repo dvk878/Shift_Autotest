@@ -1,6 +1,7 @@
 package autotests.clients;
 
 import autotests.EndpointConfig;
+import autotests.payloads.createDuck.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.http.client.HttpClient;
 import com.consol.citrus.message.builder.ObjectMappingPayloadBuilder;
@@ -108,34 +109,31 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
 
     //Validation
 
-    public void validateResponseString(TestCaseRunner runner, String responseMessage) {
+    public void validateResponseOkWoodenDuck(TestCaseRunner runner) {
         runner.$(http().client(duckService)
                 .receive()
                 .response(HttpStatus.OK)
                 .message()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .extract(fromBody().expression("$.id", "duckId"))
-                .body(responseMessage));
-    }
-
-    public void validateResponseOk(TestCaseRunner runner) {
-        runner.$(http().client(duckService)
-                .receive()
-                .response(HttpStatus.OK)
-                .message()
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .extract(fromBody().expression("$.id", "duckId"))
                 .body("{"
-                        + "  \"id\": " + "${duckId}" + ","
-                        + "  \"color\": \"" + "${color}" + "\","
-                        + "  \"height\": " + "${height}" + ","
-                        + "  \"material\": \"" + "${material}" + "\","
-                        + "  \"sound\": \"" + "${sound}" + "\","
-                        + "  \"wingsState\": \"" +"${wingsState}"
+                        + "  \"color\": \"" + "yellow" + "\","
+                        + "  \"height\": " + 2.0 + ","
+                        + "  \"material\": \"" + "wood" + "\","
+                        + "  \"sound\": \"" + "quack" + "\","
+                        + "  \"wingsState\": \"" +"ACTIVE"
                         + "\"" + "}"));
     }
 
     public void validateResponseOk(TestCaseRunner runner,String expectedPayload) {
+        runner.$(http().client(duckService)
+                .receive()
+                .response(HttpStatus.OK)
+                .message()
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .body(new ClassPathResource(expectedPayload)));
+    }
+
+    public void validateResponseOkIdExtracted(TestCaseRunner runner,String expectedPayload) {
         runner.$(http().client(duckService)
                 .receive()
                 .response(HttpStatus.OK)
@@ -155,13 +153,21 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .body(new ObjectMappingPayloadBuilder(expectedPayload,new ObjectMapper())));
     }
 
-    public void validateResponseNotFound(TestCaseRunner runner, String responseMessage) {
+    public void validateResponseOkMessageAnswer(TestCaseRunner runner, Object expectedPayload) {
+        runner.$(http().client(duckService)
+                .receive()
+                .response(HttpStatus.OK)
+                .message()
+                .body(new ObjectMappingPayloadBuilder(expectedPayload,new ObjectMapper())));
+    }
+
+    public void validateResponseNotFound(TestCaseRunner runner, String expectedPayload) {
         runner.$(http().client(duckService)
                 .receive()
                 .response(HttpStatus.NOT_FOUND)
                 .message()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .body(responseMessage));
+                .body(new ClassPathResource(expectedPayload)));
     }
 
 
@@ -177,24 +183,24 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
     }
 
     //Odd or even id
-    public void evenDuckId(TestCaseRunner runner) {
+    public void evenDuckId(TestCaseRunner runner,Object body) {
         runner.$(
                 action(context -> {
                     String duckId = context.getVariable("duckId");
                     double dDuckId = Integer.parseInt(duckId);
                     if (dDuckId % 2 == 1) {
-                        createDuck(runner, "${color}", parseDouble("23.0"), "${material}", "${sound}", "${wingsState}");
+                        createDuck(runner,body);
                     }
                 }));
     }
 
-    public void oddDuckId(TestCaseRunner runner) {
+    public void oddDuckId(TestCaseRunner runner,Object body) {
         runner.$(
                 action(context -> {
                     String duckId = context.getVariable("duckId");
                     double dDuckId = Integer.parseInt(duckId);
                     if (dDuckId % 2 == 0) {
-                        createDuck(runner, "${color}", parseDouble("23.0"), "${material}", "${sound}", "${wingsState}");
+                        createDuck(runner, body);
                     }
                 }));
     }

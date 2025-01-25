@@ -1,5 +1,7 @@
 package autotests.duckActionController;
 import autotests.clients.DuckActionsClient;
+import autotests.payloads.createDuck.CreateDuckPayload;
+import autotests.payloads.createDuck.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -11,11 +13,18 @@ public class QuackDuck extends DuckActionsClient {
     @Test(description = "Корректный звук уточки с правильным (существующим) нечетным id", enabled = true)
     @CitrusTest
     public void CorrectOddIdQuacking(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
+        CreateDuckPayload crDuck=new CreateDuckPayload()
+                .color("yellow")
+                .height(2.0)
+                .material("rubber")
+                .sound("quack")
+                .wingsState(WingsState.ACTIVE);
+
+        createDuck(runner, crDuck);
         getDuckId(runner);
-        oddDuckId(runner);
+        oddDuckId(runner,crDuck);
         quackDuck(runner, "${duckId}", "1", "1");
-        validateResponseOk(runner, "{\n" + "  \"sound\": \"quack\"\n" + "}");
+        validateResponseOk(runner, "duckActionController/quackDuck/correctIdQuackingOneTimeOneRepeat.json");
         deleteDuck(runner, "${duckId}");
     }
 
@@ -23,11 +32,18 @@ public class QuackDuck extends DuckActionsClient {
     @Test(description = "Корректный звук уточки с правильным (существующим) четным id", enabled = true)
     @CitrusTest
     public void CorrectEvenIdQuacking(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
+        CreateDuckPayload crDuck=new CreateDuckPayload()
+                .color("yellow")
+                .height(2.0)
+                .material("rubber")
+                .sound("quack")
+                .wingsState(WingsState.ACTIVE);
+
+        createDuck(runner, crDuck);
         getDuckId(runner);
-        evenDuckId(runner);
+        evenDuckId(runner,crDuck);
         quackDuck(runner, "${duckId}", "1", "1");
-        validateResponseOk(runner, "{\n" + "  \"sound\": \"quack\"\n" + "}");
+        validateResponseOk(runner, "duckActionController/quackDuck/correctIdQuackingOneTimeOneRepeat.json");
         deleteDuck(runner, "${duckId}");
     }
 

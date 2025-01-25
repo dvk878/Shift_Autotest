@@ -1,11 +1,10 @@
 package autotests.duckController;
 import autotests.clients.DuckActionsClient;
-import autotests.payloads.CreateDuckPayload;
-import autotests.payloads.WingsState;
+import autotests.payloads.createDuck.CreateDuckPayload;
+import autotests.payloads.createDuck.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
-import org.apache.commons.lang.ObjectUtils;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
@@ -14,17 +13,15 @@ public class CreateDuck extends DuckActionsClient {
     @Test(description = "Создание уточки со значением material=rubber", enabled = true)
     @CitrusTest
     public void createRubberDuck(@Optional @CitrusResource TestCaseRunner runner) {
-
-        CreateDuckPayload cr=new CreateDuckPayload()
-                .id(null)
+        CreateDuckPayload crDuck=new CreateDuckPayload()
                 .color("yellow")
                 .height(2.0)
                 .material("rubber")
                 .sound("quack")
                 .wingsState(WingsState.ACTIVE);
 
-        createDuck(runner, cr);
-        validateResponseOk(runner,cr);
+        createDuck(runner, crDuck);
+        validateResponseOkIdExtracted(runner,"duckController/createDuck/createRubberDuck.json");
         deleteDuck(runner, "${duckId}");
     }
 
@@ -32,15 +29,14 @@ public class CreateDuck extends DuckActionsClient {
     @CitrusTest
     public void CreateWoodenDuck(@Optional @CitrusResource TestCaseRunner runner) {
 
-        runner.variable("color", "yellow");
-        runner.variable("height", 23.0);
-        runner.variable("material", "wood");
-        runner.variable("sound", "quack");
-        runner.variable("wingsState", "FIXED");
-
-        createDuck(runner, "${color}", 23, "${material}", "${sound}", "${wingsState}");
-        validateResponseOk(runner);
-
+        CreateDuckPayload crDuck=new CreateDuckPayload()
+                .color("yellow")
+                .height(2.0)
+                .material("wood")
+                .sound("quack")
+                .wingsState(WingsState.ACTIVE);
+        createDuck(runner, crDuck);
+        validateResponseOk(runner,crDuck.id());
         deleteDuck(runner, "${duckId}");
 
     }

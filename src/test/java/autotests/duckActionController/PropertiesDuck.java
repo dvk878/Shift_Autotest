@@ -1,5 +1,9 @@
 package autotests.duckActionController;
 import autotests.clients.DuckActionsClient;
+import autotests.payloads.createDuck.CreateDuckPayload;
+import autotests.payloads.createDuck.WingsState;
+import autotests.payloads.propertiesDuck.PropertiesDuckPayload;
+import autotests.payloads.propertiesDuck.PropertiesWingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -14,23 +18,18 @@ public class PropertiesDuck extends DuckActionsClient {
     @CitrusTest
     public void showEvenIdWoodenDuck(@Optional @CitrusResource TestCaseRunner runner) {
 
-        runner.variable("color", "yellow");
-        runner.variable("height", "23.0");
-        runner.variable("material", "wood");
-        runner.variable("sound", "quack");
-        runner.variable("wingsState", "FIXED");
+        CreateDuckPayload crDuck=new CreateDuckPayload()
+                .color("yellow")
+                .height(2.0)
+                .material("wood")
+                .sound("quack")
+                .wingsState(WingsState.ACTIVE);
 
-        createDuck(runner, "${color}", parseDouble("23.0"), "${material}", "${sound}", "${wingsState}");
+        createDuck(runner, crDuck);
         getDuckId(runner);
-        evenDuckId(runner);
+        evenDuckId(runner,crDuck);
         showProperties(runner, "${duckId}");
-        validateResponseOk(runner,
-                "{" + "  \"color\": \"" + "${color}" + "\","
-                        + "  \"height\": " + 23.0 + ","
-                        + "  \"material\": \"" + "${material}" + "\","
-                        + "  \"sound\": \"" + "${sound}" + "\","
-                        + "  \"wingsState\": \"" +"${wingsState}"
-                        + "\"" + "}");
+        validateResponseOkWoodenDuck(runner);
         deleteDuck(runner, "${duckId}");
     }
     
@@ -38,23 +37,26 @@ public class PropertiesDuck extends DuckActionsClient {
     @CitrusTest
     public void showOddIdRubberDuck(@Optional @CitrusResource TestCaseRunner runner) {
 
-        runner.variable("color", "yellow");
-        runner.variable("height", "23.0");
-        runner.variable("material", "rubber");
-        runner.variable("sound", "quack");
-        runner.variable("wingsState", "FIXED");
+        CreateDuckPayload crDuck=new CreateDuckPayload()
+                .color("yellow")
+                .height(2.0)
+                .material("rubber")
+                .sound("quack")
+                .wingsState(WingsState.ACTIVE);
 
-        createDuck(runner, "${color}", parseDouble("23"), "${material}", "${sound}", "${wingsState}");
+        createDuck(runner, crDuck);
+
+        PropertiesDuckPayload properties = new PropertiesDuckPayload()
+                .color("yellow")
+                .height(2.0)
+                .material("rubber")
+                .sound("quack")
+                .wingsState(PropertiesWingsState.ACTIVE);
+
         getDuckId(runner);
-        oddDuckId(runner);
+        oddDuckId(runner,crDuck);
         showProperties(runner, "${duckId}");
-        validateResponseOk(runner,
-                "{" + "  \"color\": \"" + "${color}" + "\","
-                        + "  \"height\": " + 23.0 + ","
-                        + "  \"material\": \"" + "${material}" + "\","
-                        + "  \"sound\": \"" + "${sound}" + "\","
-                        + "  \"wingsState\": \"" +"${wingsState}"
-                        + "\"" + "}");
+        validateResponseOkMessageAnswer(runner,properties);
         deleteDuck(runner, "${duckId}");
     }
 

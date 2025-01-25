@@ -1,5 +1,8 @@
 package autotests.duckActionController;
 import autotests.clients.DuckActionsClient;
+import autotests.payloads.createDuck.CreateDuckPayload;
+import autotests.payloads.createDuck.WingsState;
+import autotests.payloads.messageAnswer;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -11,30 +14,53 @@ public class FlyDuck extends DuckActionsClient {
     @Test(description = "Полет уточки с правильным (существующим) id и с активными крыльями: ACTIVE", enabled = true)
     @CitrusTest
     public void ActiveWingsFly(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "ACTIVE");
+        CreateDuckPayload crDuck=new CreateDuckPayload()
+                .color("yellow")
+                .height(2.0)
+                .material("rubber")
+                .sound("quack")
+                .wingsState(WingsState.ACTIVE);
+
+        messageAnswer answer = new messageAnswer().message("I’m flying");
+
+        createDuck(runner, crDuck);
         getDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponseOk(runner, "{\n" + "  \"message\": \"I am flying\"\n" + "}");
+        validateResponseOkMessageAnswer(runner,answer);
         deleteDuck(runner, "${duckId}");
     }
 
     @Test(description = "Полет уточки с правильным (существующим) id и со связанными крыльями: FIXED", enabled = true)
     @CitrusTest
     public void FixedWingsFly(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
+        CreateDuckPayload crDuck=new CreateDuckPayload()
+                .color("yellow")
+                .height(2.0)
+                .material("rubber")
+                .sound("quack")
+                .wingsState(WingsState.FIXED);
+
+        createDuck(runner, crDuck);
         getDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponseOk(runner, "{\n" + "  \"message\": \"I can't fly\"\n" + "}");
+        validateResponseOk(runner, "duckActionController/flyDuck/fixedFlyDuck.json");
         deleteDuck(runner, "${duckId}");
     }
 
     @Test(description = "Полет уточки с правильным (существующим) id и с крыльями в неопределенном состоянии: ACTIVE", enabled = true)
     @CitrusTest
     public void UndefinedWingsFly(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "UNDEFINED");
+        CreateDuckPayload crDuck=new CreateDuckPayload()
+                .color("yellow")
+                .height(2.0)
+                .material("rubber")
+                .sound("quack")
+                .wingsState(WingsState.UNDEFINED);
+
+        createDuck(runner, crDuck);
         getDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponseOk(runner, "{\n" + "  \"message\": \"Wings are not detected :(\"\n" + "}");
+        validateResponseOk(runner, "duckActionController/flyDuck/undefinedFlyDuck.json");
         deleteDuck(runner, "${duckId}");
     }
 

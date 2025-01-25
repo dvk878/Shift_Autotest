@@ -1,4 +1,4 @@
-package autotests.payloads;
+package autotests.payloads.createDuck;
 public enum WingsState {
     ACTIVE,
     FIXED,
