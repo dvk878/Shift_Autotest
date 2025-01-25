@@ -38,6 +38,16 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                         + "\"\n" + "}"));
     }
 
+    public void createDuck(TestCaseRunner runner, Object body) {
+        runner.$(http().client(duckService)
+                .send()
+                .post("/api/duck/create")
+                .message()
+                .contentType(MediaType.APPLICATION_JSON_VALUE)
+                .body(new ObjectMappingPayloadBuilder(body, new ObjectMapper())));
+
+    }
+
     public void deleteDuck(TestCaseRunner runner, String id) {
         runner.$(http().client(duckService)
                 .send()

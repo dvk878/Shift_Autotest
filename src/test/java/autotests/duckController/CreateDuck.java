@@ -1,27 +1,30 @@
 package autotests.duckController;
 import autotests.clients.DuckActionsClient;
 import autotests.payloads.CreateDuckPayload;
+import autotests.payloads.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import org.apache.commons.lang.ObjectUtils;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
 public class CreateDuck extends DuckActionsClient {
 
-
     @Test(description = "Создание уточки со значением material=rubber", enabled = true)
     @CitrusTest
     public void createRubberDuck(@Optional @CitrusResource TestCaseRunner runner) {
 
-        runner.variable("color", "yellow");
-        runner.variable("height", 23.0);
-        runner.variable("material", "rubber");
-        runner.variable("sound", "quack");
-        runner.variable("wingsState", "FIXED");
+        CreateDuckPayload cr=new CreateDuckPayload()
+                .id(null)
+                .color("yellow")
+                .height(2.0)
+                .material("rubber")
+                .sound("quack")
+                .wingsState(WingsState.ACTIVE);
 
-        createDuck(runner, "${color}", 23.0, "${material}", "${sound}", "${wingsState}");
-        validateResponseOk(runner);
+        createDuck(runner, cr);
+        validateResponseOk(runner,cr);
         deleteDuck(runner, "${duckId}");
     }
 
