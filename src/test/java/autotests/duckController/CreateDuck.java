@@ -20,6 +20,7 @@ public class CreateDuck extends DuckActionsClient {
     @Test(description = "Creating duck with material=rubber", enabled = true)
     @CitrusTest
     public void createRubberDuckEndpoint(@Optional @CitrusResource TestCaseRunner runner) {
+        deleteDuckFromDb(runner);
         CreateDuckPayload crDuck=new CreateDuckPayload()
                 .color("yellow")
                 .height(2.0)
@@ -30,18 +31,19 @@ public class CreateDuck extends DuckActionsClient {
         createDuck(runner, crDuck);
         getDuckId(runner);
         validateDuckInDatabase(runner,"${duckId}","yellow","2.0","rubber","quack","ACTIVE");
-        deleteDuckFromDb(runner);
+
     }
 
     @Test(description = "Creating duck with material=rubber", enabled = true)
     @CitrusTest
     public void createRubberDuckDb(@Optional @CitrusResource TestCaseRunner runner) {
+        deleteDuckFromDb(runner);
         runner.variable("duckId","1234567");
         databaseUpdate(runner,
                 "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
                         "values (${duckId},'yellow',2.0,'rubber','quack','ACTIVE');");
         validateDuckInDatabase(runner,"${duckId}","yellow","2.0","rubber","quack","ACTIVE");
-        deleteDuckFromDb(runner);
+
     }
 
 
@@ -49,7 +51,7 @@ public class CreateDuck extends DuckActionsClient {
     @Test(description = "Creating duck with material=wood", enabled = true)
     @CitrusTest
     public void CreateWoodenDuckEndpoint(@Optional @CitrusResource TestCaseRunner runner) {
-
+        deleteDuckFromDb(runner);
         CreateDuckPayload crDuck=new CreateDuckPayload()
                 .color("yellow")
                 .height(2.0)
@@ -59,19 +61,20 @@ public class CreateDuck extends DuckActionsClient {
         createDuck(runner, crDuck);
         getDuckId(runner);
         validateDuckInDatabase(runner,"${duckId}","yellow","2.0","wood","quack","ACTIVE");
-        deleteDuckFromDb(runner);
+
 
     }
 
     @Test(description = "Creating duck with material=wood", enabled = true)
     @CitrusTest
     public void CreateWoodenDuckDb(@Optional @CitrusResource TestCaseRunner runner) {
+        deleteDuckFromDb(runner);
         runner.variable("duckId","1234567");
         databaseUpdate(runner,
                 "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
                         "values (${duckId},'yellow',2.0,'wood','quack','ACTIVE');");
         validateDuckInDatabase(runner,"${duckId}","yellow","2.0","wood","quack","ACTIVE");
-        deleteDuckFromDb(runner);
+
 
     }
 
