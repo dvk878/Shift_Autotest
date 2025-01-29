@@ -2,15 +2,12 @@ package autotests.duckActionController;
 import autotests.clients.DuckActionsClient;
 import autotests.payloads.createDuck.CreateDuckPayload;
 import autotests.payloads.createDuck.WingsState;
-import autotests.payloads.propertiesDuck.PropertiesDuckPayload;
-import autotests.payloads.propertiesDuck.PropertiesWingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-
-import static java.lang.Double.parseDouble;
 
 public class PropertiesDuck extends DuckActionsClient {
 
@@ -29,7 +26,7 @@ public class PropertiesDuck extends DuckActionsClient {
         getDuckId(runner);
         evenDuckId(runner,crDuck);
         showProperties(runner, "${duckId}");
-        validateResponseOkWoodenDuck(runner);
+        validateResponse(runner, crDuck,HttpStatus.OK);
         deleteDuck(runner, "${duckId}");
     }
     
@@ -43,20 +40,11 @@ public class PropertiesDuck extends DuckActionsClient {
                 .material("rubber")
                 .sound("quack")
                 .wingsState(WingsState.ACTIVE);
-
         createDuck(runner, crDuck);
-
-        PropertiesDuckPayload properties = new PropertiesDuckPayload()
-                .color("yellow")
-                .height(2.0)
-                .material("rubber")
-                .sound("quack")
-                .wingsState(PropertiesWingsState.ACTIVE);
-
         getDuckId(runner);
         oddDuckId(runner,crDuck);
         showProperties(runner, "${duckId}");
-        validateResponseOkMessageAnswer(runner,properties);
+        validateResponse(runner,crDuck, HttpStatus.OK);
         deleteDuck(runner, "${duckId}");
     }
 

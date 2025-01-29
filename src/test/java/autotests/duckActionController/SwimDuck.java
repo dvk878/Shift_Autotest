@@ -5,6 +5,7 @@ import autotests.payloads.createDuck.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
@@ -24,7 +25,7 @@ public class SwimDuck extends DuckActionsClient {
         createDuck(runner, crDuck);
         getDuckId(runner);
         duckSwim(runner, "${duckId}");
-        validateResponseOk(runner, "duckActionController/swimDuck/existingDuckIdSwim.json");
+        validateResponse(runner, "duckActionController/swimDuck/existingDuckIdSwim.json", HttpStatus.OK);
         deleteDuck(runner, "${duckId}");
     }
 
@@ -43,7 +44,7 @@ public class SwimDuck extends DuckActionsClient {
         getDuckId(runner);
         deleteDuck(runner, "${duckId}");
         duckSwim(runner, "${duckId}");
-        validateResponseNotFound(runner, "duckActionController/swimDuck/nonexistentDuckIdSwim.json");
+        validateResponse(runner, "duckActionController/swimDuck/nonexistentDuckIdSwim.json", HttpStatus.NOT_FOUND);
     }
 
 }

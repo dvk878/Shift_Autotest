@@ -5,6 +5,7 @@ import autotests.payloads.createDuck.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
@@ -21,8 +22,9 @@ public class CreateDuck extends DuckActionsClient {
                 .wingsState(WingsState.ACTIVE);
 
         createDuck(runner, crDuck);
-        validateResponseOkIdExtracted(runner,"duckController/createDuck/createRubberDuck.json");
-        deleteDuck(runner, "${duckId}");
+        getDuckId(runner);
+        validateResponse(runner,crDuck.id(),HttpStatus.OK);
+        deleteDuck(runner,"${duckId}");
     }
 
     @Test(description = "Создание уточки со значением material=wood", enabled = true)
@@ -36,8 +38,9 @@ public class CreateDuck extends DuckActionsClient {
                 .sound("quack")
                 .wingsState(WingsState.ACTIVE);
         createDuck(runner, crDuck);
-        validateResponseOk(runner,crDuck.id());
-        deleteDuck(runner, "${duckId}");
+        getDuckId(runner);
+        validateResponse(runner,crDuck.id(), HttpStatus.OK);
+        deleteDuck(runner,"${duckId}");
 
     }
 

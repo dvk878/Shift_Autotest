@@ -5,6 +5,7 @@ import autotests.payloads.createDuck.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
@@ -25,7 +26,7 @@ public class DeleteDuck extends DuckActionsClient {
         createDuck(runner, crDuck);
         getDuckId(runner);
         deleteDuck(runner,"${duckId}");
-        validateResponseOk(runner, "duckController/deleteDuck/deleteDuck.json");
+        validateResponse(runner, "duckController/deleteDuck/deleteDuck.json", HttpStatus.OK);
     }
 }
 

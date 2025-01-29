@@ -6,6 +6,7 @@ import autotests.payloads.messageAnswer;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
@@ -26,7 +27,7 @@ public class FlyDuck extends DuckActionsClient {
         createDuck(runner, crDuck);
         getDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponseOkMessageAnswer(runner,answer);
+        validateResponse(runner,answer,HttpStatus.OK);
         deleteDuck(runner, "${duckId}");
     }
 
@@ -43,7 +44,7 @@ public class FlyDuck extends DuckActionsClient {
         createDuck(runner, crDuck);
         getDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponseOk(runner, "duckActionController/flyDuck/fixedFlyDuck.json");
+        validateResponse(runner, "duckActionController/flyDuck/fixedFlyDuck.json", HttpStatus.OK);
         deleteDuck(runner, "${duckId}");
     }
 
@@ -60,7 +61,7 @@ public class FlyDuck extends DuckActionsClient {
         createDuck(runner, crDuck);
         getDuckId(runner);
         duckFly(runner, "${duckId}");
-        validateResponseOk(runner, "duckActionController/flyDuck/undefinedFlyDuck.json");
+        validateResponse(runner, "duckActionController/flyDuck/undefinedFlyDuck.json",HttpStatus.OK);
         deleteDuck(runner, "${duckId}");
     }
 

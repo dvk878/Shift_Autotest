@@ -5,6 +5,7 @@ import autotests.payloads.createDuck.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
@@ -24,7 +25,7 @@ public class QuackDuck extends DuckActionsClient {
         getDuckId(runner);
         oddDuckId(runner,crDuck);
         quackDuck(runner, "${duckId}", "1", "1");
-        validateResponseOk(runner, "duckActionController/quackDuck/correctIdQuackingOneTimeOneRepeat.json");
+        validateResponse(runner, "duckActionController/quackDuck/correctIdQuackingOneTimeOneRepeat.json", HttpStatus.OK);
         deleteDuck(runner, "${duckId}");
     }
 
@@ -43,7 +44,7 @@ public class QuackDuck extends DuckActionsClient {
         getDuckId(runner);
         evenDuckId(runner,crDuck);
         quackDuck(runner, "${duckId}", "1", "1");
-        validateResponseOk(runner, "duckActionController/quackDuck/correctIdQuackingOneTimeOneRepeat.json");
+        validateResponse(runner, "duckActionController/quackDuck/correctIdQuackingOneTimeOneRepeat.json", HttpStatus.OK);
         deleteDuck(runner, "${duckId}");
     }
 

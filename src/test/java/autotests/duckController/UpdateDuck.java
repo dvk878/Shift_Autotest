@@ -5,6 +5,7 @@ import autotests.payloads.createDuck.WingsState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
@@ -25,7 +26,7 @@ public class UpdateDuck extends DuckActionsClient {
 
         getDuckId(runner);
         updateDuck(runner,"${duckId}","red","3.0","rubber","quack","ACTIVE");
-        validateResponseOk(runner, "duckController/updateDuck/updatingValues.json");
+        validateResponse(runner, "duckController/updateDuck/updatingValues.json", HttpStatus.OK);
         deleteDuck(runner,"${duckId}");
     }
 
@@ -44,7 +45,7 @@ public class UpdateDuck extends DuckActionsClient {
 
         getDuckId(runner);
         updateDuck(runner,"${duckId}","red","2.0","rubber","roar","ACTIVE");
-        validateResponseOk(runner, "duckController/updateDuck/updatingValues.json");
+        validateResponse(runner, "duckController/updateDuck/updatingValues.json", HttpStatus.OK);
         deleteDuck(runner,"${duckId}");
     }
 }
