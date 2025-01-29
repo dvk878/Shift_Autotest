@@ -99,7 +99,6 @@ public class FlyDuck extends DuckActionsClient {
     public void UndefinedWingsFlyDb(@Optional @CitrusResource TestCaseRunner runner) {
         deleteDuckFromDb(runner);
         runner.variable("duckId","1234568");
-        messageAnswer answer = new messageAnswer().message("I’m flying");
         databaseUpdate(runner,
                 "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
                         "values (${duckId},'yellow',2.0,'wood','quack','UNDEFINED');");
