@@ -6,10 +6,13 @@ import autotests.payloads.messageAnswer;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-
+@Epic("Тесты на duckActionController")
+@Feature("Эндпоинт /api/duck/action/fly")
 public class FlyDuck extends DuckActionsClient {
 
     @Test(description = "Полет уточки с правильным (существующим) id и с активными крыльями: ACTIVE", enabled = true)
