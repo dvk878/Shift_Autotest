@@ -11,13 +11,15 @@ import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
+import static com.consol.citrus.container.FinallySequence.Builder.doFinally;
+
 @Epic("duckController Tests")
 @Feature("Endpoint /api/duck/create")
 public class CreateDuck extends DuckActionsClient {
 
-    @Test(description = "Создание уточки со значением material=rubber", enabled = true)
+    @Test(description = "Creating duck with material=rubber", enabled = true)
     @CitrusTest
-    public void createRubberDuck(@Optional @CitrusResource TestCaseRunner runner) {
+    public void createRubberDuckEndpoint(@Optional @CitrusResource TestCaseRunner runner) {
         CreateDuckPayload crDuck=new CreateDuckPayload()
                 .color("yellow")
                 .height(2.0)
@@ -27,13 +29,26 @@ public class CreateDuck extends DuckActionsClient {
 
         createDuck(runner, crDuck);
         getDuckId(runner);
-        validateResponse(runner,crDuck.id(),HttpStatus.OK);
-        deleteDuck(runner,"${duckId}");
+        validateDuckInDatabase(runner,"${duckId}","yellow","2.0","rubber","quack","ACTIVE");
+        deleteDuckFromDb(runner);
     }
 
-    @Test(description = "Создание уточки со значением material=wood", enabled = true)
+    @Test(description = "Creating duck with material=rubber", enabled = true)
     @CitrusTest
-    public void CreateWoodenDuck(@Optional @CitrusResource TestCaseRunner runner) {
+    public void createRubberDuckDb(@Optional @CitrusResource TestCaseRunner runner) {
+        runner.variable("duckId","1234567");
+        databaseUpdate(runner,
+                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
+                        "values (${duckId},'yellow',2.0,'rubber','quack','ACTIVE');");
+        validateDuckInDatabase(runner,"${duckId}","yellow","2.0","rubber","quack","ACTIVE");
+        deleteDuckFromDb(runner);
+    }
+
+
+
+    @Test(description = "Creating duck with material=wood", enabled = true)
+    @CitrusTest
+    public void CreateWoodenDuckEndpoint(@Optional @CitrusResource TestCaseRunner runner) {
 
         CreateDuckPayload crDuck=new CreateDuckPayload()
                 .color("yellow")
@@ -43,8 +58,20 @@ public class CreateDuck extends DuckActionsClient {
                 .wingsState(WingsState.ACTIVE);
         createDuck(runner, crDuck);
         getDuckId(runner);
-        validateResponse(runner,crDuck.id(), HttpStatus.OK);
-        deleteDuck(runner,"${duckId}");
+        validateDuckInDatabase(runner,"${duckId}","yellow","2.0","wood","quack","ACTIVE");
+        deleteDuckFromDb(runner);
+
+    }
+
+    @Test(description = "Creating duck with material=wood", enabled = true)
+    @CitrusTest
+    public void CreateWoodenDuckDb(@Optional @CitrusResource TestCaseRunner runner) {
+        runner.variable("duckId","1234567");
+        databaseUpdate(runner,
+                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
+                        "values (${duckId},'yellow',2.0,'wood','quack','ACTIVE');");
+        validateDuckInDatabase(runner,"${duckId}","yellow","2.0","wood","quack","ACTIVE");
+        deleteDuckFromDb(runner);
 
     }
 

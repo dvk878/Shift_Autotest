@@ -11,9 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 import org.springframework.test.context.ContextConfiguration;
 
 import static com.consol.citrus.DefaultTestActionBuilder.action;
+import static com.consol.citrus.actions.ExecuteSQLAction.Builder.sql;
+import static com.consol.citrus.actions.ExecuteSQLQueryAction.Builder.query;
+import static com.consol.citrus.container.FinallySequence.Builder.doFinally;
 import static com.consol.citrus.dsl.MessageSupport.MessageBodySupport.fromBody;
 import static com.consol.citrus.http.actions.HttpActionBuilder.http;
 
@@ -22,6 +26,14 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
 
     @Autowired
     protected HttpClient duckService;
+
+    @Autowired
+    protected SingleConnectionDataSource testDb;
+
+    public void databaseUpdate(TestCaseRunner runner, String sql) {
+        runner.$(sql(testDb)
+                .statement(sql));
+    }
 
     //СRUD endpoints
     @Step("Create duck endpoint")
@@ -48,6 +60,7 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .body(new ObjectMappingPayloadBuilder(body, new ObjectMapper())));
 
     }
+
     @Step("Delete duck endpoint")
     public void deleteDuck(TestCaseRunner runner, String id) {
         runner.$(http().client(duckService)
@@ -56,6 +69,12 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .message()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .queryParam("id",id));
+    }
+
+    @Step("Delete duck DB")
+    public void deleteDuckFromDb(TestCaseRunner runner) {
+        runner.$(doFinally().actions(context ->
+                databaseUpdate(runner, "DELETE FROM DUCK WHERE ID=${duckId}")));
     }
     @Step("Update duck endpoint")
     public void updateDuck(TestCaseRunner runner,String id, String color, String height, String material, String sound, String wingsState) {
@@ -126,6 +145,23 @@ public class DuckActionsClient extends TestNGCitrusSpringSupport {
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .body(new ObjectMappingPayloadBuilder(expectedPayload,new ObjectMapper())));
     }
+
+    public void validateDuckInDatabase(TestCaseRunner runner, String id, String color, String height,
+                                       String material, String sound, String wingsState) {
+        runner.$(query(testDb)
+                .statement("SELECT * FROM DUCK WHERE ID=" + id)
+                .validate("COLOR",color)
+                .validate("HEIGHT",height)
+                .validate("MATERIAL",material)
+                .validate("SOUND",sound)
+                .validate("WINGS_STATE",wingsState));
+    }
+
+    public void validateDuckInDatabase(TestCaseRunner runner, String id) {
+        runner.$(query(testDb)
+                .statement("SELECT * FROM DUCK WHERE ID=" + id));
+    }
+
     //Duck id computing
     @Step("Get duck id")
     public void getDuckId(TestCaseRunner runner) {

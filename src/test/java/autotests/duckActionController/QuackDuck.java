@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 @Feature("Endpoint /api/duck/action/quack")
 public class QuackDuck extends DuckActionsClient {
 
-    @Test(description = "Корректный звук уточки с правильным (существующим) нечетным id", enabled = true)
+    @Test(description = "Correct duck sound with correct(existing) odd id", enabled = true)
     @CitrusTest
     public void CorrectOddIdQuacking(@Optional @CitrusResource TestCaseRunner runner) {
         CreateDuckPayload crDuck=new CreateDuckPayload()
@@ -32,8 +32,21 @@ public class QuackDuck extends DuckActionsClient {
         deleteDuck(runner, "${duckId}");
     }
 
+    @Test(description = "Correct duck sound with correct(existing) odd id", enabled = true)
+    @CitrusTest
+    public void CorrectOddIdQuackingDb(@Optional @CitrusResource TestCaseRunner runner) {
+        deleteDuckFromDb(runner);
+        runner.variable("duckId","1234567");
+        databaseUpdate(runner,
+                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
+                        "values (${duckId},'yellow',2.0,'wood','quack','ACTIVE');");
+        quackDuck(runner,"${duckId}","1","1");
+        validateResponse(runner, "duckActionController/quackDuck/correctIdQuackingOneTimeOneRepeat.json", HttpStatus.OK);
+        deleteDuckFromDb(runner);
+    }
 
-    @Test(description = "Корректный звук уточки с правильным (существующим) четным id", enabled = true)
+
+    @Test(description = "Correct duck sound with correct(existing) even id", enabled = true)
     @CitrusTest
     public void CorrectEvenIdQuacking(@Optional @CitrusResource TestCaseRunner runner) {
         CreateDuckPayload crDuck=new CreateDuckPayload()
@@ -49,6 +62,20 @@ public class QuackDuck extends DuckActionsClient {
         quackDuck(runner, "${duckId}", "1", "1");
         validateResponse(runner, "duckActionController/quackDuck/correctIdQuackingOneTimeOneRepeat.json", HttpStatus.OK);
         deleteDuck(runner, "${duckId}");
+    }
+
+    @Test(description = "Correct duck sound with correct(existing) even id", enabled = true)
+    @CitrusTest
+    public void CorrectEvenIdQuackingId(@Optional @CitrusResource TestCaseRunner runner) {
+        deleteDuckFromDb(runner);
+        runner.variable("duckId","1234568");
+        deleteDuckFromDb(runner);
+        databaseUpdate(runner,
+                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
+                        "values (${duckId},'yellow',2.0,'wood','quack','ACTIVE');");
+        quackDuck(runner,"${duckId}","1","1");
+        validateResponse(runner, "duckActionController/quackDuck/correctIdQuackingOneTimeOneRepeat.json", HttpStatus.OK);
+
     }
 
 }

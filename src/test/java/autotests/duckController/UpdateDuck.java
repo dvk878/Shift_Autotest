@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 @Feature("Endpoint /api/duck/update")
 public class UpdateDuck extends DuckActionsClient {
 
-    @Test(description = "Изменение цвета и высоты уточки",enabled = true)
+    @Test(description = "Changing duck color and height",enabled = true)
     @CitrusTest
     public void UpdateColorAndHeight(@Optional @CitrusResource TestCaseRunner runner)
     {
@@ -33,7 +33,20 @@ public class UpdateDuck extends DuckActionsClient {
         deleteDuck(runner,"${duckId}");
     }
 
-    @Test(description = "Изменение цвета и звука уточки",enabled = true)
+    @Test(description = "Changing duck color and height",enabled = true)
+    @CitrusTest
+    public void UpdateColorAndHeightDb(@Optional @CitrusResource TestCaseRunner runner)
+    {
+        deleteDuckFromDb(runner);
+        runner.variable("duckId","1234567");
+        databaseUpdate(runner,
+                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
+                        "values (${duckId},'yellow',2.0,'rubber','quack','ACTIVE');");
+        updateDuck(runner,"${duckId}","red","3.0","rubber","quack","ACTIVE");
+        validateDuckInDatabase(runner,"${duckId}","red","3.0","wood","quack","ACTIVE");
+    }
+
+    @Test(description = "Changing duck color and sound",enabled = true)
     @CitrusTest
     public void UpdateColorAndSound(@Optional @CitrusResource TestCaseRunner runner)
     {
@@ -50,5 +63,19 @@ public class UpdateDuck extends DuckActionsClient {
         updateDuck(runner,"${duckId}","red","2.0","rubber","roar","ACTIVE");
         validateResponse(runner, "duckController/updateDuck/updatingValues.json", HttpStatus.OK);
         deleteDuck(runner,"${duckId}");
+    }
+
+    @Test(description = "Changing duck color and sound",enabled = true)
+    @CitrusTest
+    public void UpdateColorAndSoundDb(@Optional @CitrusResource TestCaseRunner runner)
+    {
+        deleteDuckFromDb(runner);
+        runner.variable("duckId","1234567");
+        databaseUpdate(runner,
+                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
+                        "values (${duckId},'yellow',2.0,'rubber','quack','ACTIVE');");
+        updateDuck(runner,"${duckId}","red","2.0","rubber","roar","ACTIVE");
+        validateDuckInDatabase(runner,"${duckId}","red","2.0","rubber","roar","ACTIVE");
+
     }
 }

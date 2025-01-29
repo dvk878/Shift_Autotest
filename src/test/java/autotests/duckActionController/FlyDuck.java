@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 @Feature("Endpoint /api/duck/action/fly")
 public class FlyDuck extends DuckActionsClient {
 
-    @Test(description = "Полет уточки с правильным (существующим) id и с активными крыльями: ACTIVE", enabled = true)
+    @Test(description = "Duck flight with correct(existing) id and wingsState=ACTIVE", enabled = true)
     @CitrusTest
     public void ActiveWingsFly(@Optional @CitrusResource TestCaseRunner runner) {
         CreateDuckPayload crDuck=new CreateDuckPayload()
@@ -34,7 +34,20 @@ public class FlyDuck extends DuckActionsClient {
         deleteDuck(runner, "${duckId}");
     }
 
-    @Test(description = "Полет уточки с правильным (существующим) id и со связанными крыльями: FIXED", enabled = true)
+    @Test(description = "Duck flight with correct(existing) id and wingsState=ACTIVE", enabled = true)
+    @CitrusTest
+    public void ActiveWingsFlyDb(@Optional @CitrusResource TestCaseRunner runner) {
+        deleteDuckFromDb(runner);
+        runner.variable("duckId","1234568");
+        messageAnswer answer = new messageAnswer().message("I’m flying");
+        databaseUpdate(runner,
+                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
+                        "values (${duckId},'yellow',2.0,'wood','quack','ACTIVE');");
+        duckFly(runner, "${duckId}");
+        validateResponse(runner, answer,HttpStatus.OK);
+    }
+
+    @Test(description = "Duck flight with correct(existing) id and wingsState=FIXED", enabled = true)
     @CitrusTest
     public void FixedWingsFly(@Optional @CitrusResource TestCaseRunner runner) {
         CreateDuckPayload crDuck=new CreateDuckPayload()
@@ -51,7 +64,20 @@ public class FlyDuck extends DuckActionsClient {
         deleteDuck(runner, "${duckId}");
     }
 
-    @Test(description = "Полет уточки с правильным (существующим) id и с крыльями в неопределенном состоянии: ACTIVE", enabled = true)
+    @Test(description = "Duck flight with correct(existing) id and wingsState=FIXED", enabled = true)
+    @CitrusTest
+    public void FixedWingsFlyDb(@Optional @CitrusResource TestCaseRunner runner) {
+        deleteDuckFromDb(runner);
+        runner.variable("duckId","1234568");
+        messageAnswer answer = new messageAnswer().message("I’m flying");
+        databaseUpdate(runner,
+                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
+                        "values (${duckId},'yellow',2.0,'wood','quack','FIXED');");
+        duckFly(runner, "${duckId}");
+        validateResponse(runner, "duckActionController/flyDuck/fixedFlyDuck.json",HttpStatus.OK);
+    }
+
+    @Test(description = "Duck flight with correct(existing) id and wingsState=UNDEFINED", enabled = true)
     @CitrusTest
     public void UndefinedWingsFly(@Optional @CitrusResource TestCaseRunner runner) {
         CreateDuckPayload crDuck=new CreateDuckPayload()
@@ -66,6 +92,19 @@ public class FlyDuck extends DuckActionsClient {
         duckFly(runner, "${duckId}");
         validateResponse(runner, "duckActionController/flyDuck/undefinedFlyDuck.json",HttpStatus.OK);
         deleteDuck(runner, "${duckId}");
+    }
+
+    @Test(description = "Duck flight with correct(existing) id and wingsState=UNDEFINED", enabled = true)
+    @CitrusTest
+    public void UndefinedWingsFlyDb(@Optional @CitrusResource TestCaseRunner runner) {
+        deleteDuckFromDb(runner);
+        runner.variable("duckId","1234568");
+        messageAnswer answer = new messageAnswer().message("I’m flying");
+        databaseUpdate(runner,
+                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
+                        "values (${duckId},'yellow',2.0,'wood','quack','UNDEFINED');");
+        duckFly(runner, "${duckId}");
+        validateResponse(runner, "duckActionController/flyDuck/undefinedFlyDuck.json",HttpStatus.OK);
     }
 
 

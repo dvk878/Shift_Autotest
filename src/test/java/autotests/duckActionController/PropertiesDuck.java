@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 @Feature("Endpoint /api/duck/action/properties")
 public class PropertiesDuck extends DuckActionsClient {
 
-    @Test(description = "Просмотр свойств уточки с четным (существующим) id и утка с material=wood", enabled = true)
+    @Test(description = "Reviewing duck properties with even(existing) id and material=wood", enabled = true)
     @CitrusTest
     public void showEvenIdWoodenDuck(@Optional @CitrusResource TestCaseRunner runner) {
 
@@ -32,8 +32,20 @@ public class PropertiesDuck extends DuckActionsClient {
         validateResponse(runner, crDuck,HttpStatus.OK);
         deleteDuck(runner, "${duckId}");
     }
+
+    @Test(description = "Reviewing duck properties with even(existing) id and material=wood", enabled = true)
+    @CitrusTest
+    public void showEvenIdWoodenDuckDb(@Optional @CitrusResource TestCaseRunner runner) {
+        deleteDuckFromDb(runner);
+        runner.variable("duckId","1234568");
+        databaseUpdate(runner,
+                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
+                        "values (${duckId},'yellow',2.0,'wood','quack','ACTIVE');");
+        showProperties(runner, "${duckId}");
+        validateResponse(runner, "duckActionController/propertiesDuck/showEvenIdWoodenDuck.json",HttpStatus.OK);
+    }
     
-    @Test(description = "Просмотр свойств уточки с нечетным (существующим) id и утка с material=rubber", enabled = true)
+    @Test(description = "Reviewing duck properties with odd(existing) id and material=rubber", enabled = true)
     @CitrusTest
     public void showOddIdRubberDuck(@Optional @CitrusResource TestCaseRunner runner) {
 
@@ -49,6 +61,18 @@ public class PropertiesDuck extends DuckActionsClient {
         showProperties(runner, "${duckId}");
         validateResponse(runner,crDuck, HttpStatus.OK);
         deleteDuck(runner, "${duckId}");
+    }
+
+    @Test(description = "Reviewing duck properties with odd(existing) id and material=rubber", enabled = true)
+    @CitrusTest
+    public void showOddIdRubberDuckDb(@Optional @CitrusResource TestCaseRunner runner) {
+        deleteDuckFromDb(runner);
+        runner.variable("duckId","1234567");
+        databaseUpdate(runner,
+                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
+                        "values (${duckId},'yellow',2.0,'rubber','quack','ACTIVE');");
+        showProperties(runner, "${duckId}");
+        validateResponse(runner, "duckActionController/propertiesDuck/showOddIdRubberDuck.json",HttpStatus.OK);
     }
 
 

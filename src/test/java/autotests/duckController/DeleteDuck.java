@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 @Feature("Endpoint /api/duck/delete")
 public class DeleteDuck extends DuckActionsClient {
 
-    @Test(description = "Удаление уточки",enabled = true)
+    @Test(description = "Deleting duck",enabled = true)
     @CitrusTest
     public void DeleteDuck(@Optional @CitrusResource TestCaseRunner runner)
     {
@@ -30,6 +30,20 @@ public class DeleteDuck extends DuckActionsClient {
         getDuckId(runner);
         deleteDuck(runner,"${duckId}");
         validateResponse(runner, "duckController/deleteDuck/deleteDuck.json", HttpStatus.OK);
+    }
+
+    @Test(description = "Deleting duck",enabled = true)
+    @CitrusTest
+    public void DeleteDuckDb(@Optional @CitrusResource TestCaseRunner runner)
+    {
+        deleteDuckFromDb(runner);
+        runner.variable("duckId","1234567");
+        databaseUpdate(runner,
+                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
+                        "values (${duckId},'yellow',2.0,'wood','quack','ACTIVE');");
+        deleteDuck(runner,"${duckId}");
+        validateResponse(runner,"duckController/deleteDuck/deleteDuck.json", HttpStatus.OK);
+
     }
 }
 
