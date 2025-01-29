@@ -10,8 +10,8 @@ import io.qameta.allure.Feature;
 import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-@Epic("Тесты на duckController")
-@Feature("Эндпоинт /api/duck/update")
+@Epic("duckController Tests")
+@Feature("Endpoint /api/duck/update")
 public class UpdateDuck extends DuckActionsClient {
 
     @Test(description = "Изменение цвета и высоты уточки",enabled = true)

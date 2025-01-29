@@ -10,8 +10,8 @@ import io.qameta.allure.Feature;
 import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-@Epic("Тесты на duckActionController")
-@Feature("Эндпоинт /api/duck/action/quack")
+@Epic("duckActionController Tests")
+@Feature("Endpoint /api/duck/action/quack")
 public class QuackDuck extends DuckActionsClient {
 
     @Test(description = "Корректный звук уточки с правильным (существующим) нечетным id", enabled = true)

@@ -11,8 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
-@Epic("Тесты на duckController")
-@Feature("Эндпоинт /api/duck/create")
+@Epic("duckController Tests")
+@Feature("Endpoint /api/duck/create")
 public class CreateDuck extends DuckActionsClient {
 
     @Test(description = "Создание уточки со значением material=rubber", enabled = true)

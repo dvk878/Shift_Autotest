@@ -10,8 +10,8 @@ import io.qameta.allure.Feature;
 import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-@Epic("Тесты на duckController")
-@Feature("Эндпоинт /api/duck/delete")
+@Epic("duckController Tests")
+@Feature("Endpoint /api/duck/delete")
 public class DeleteDuck extends DuckActionsClient {
 
     @Test(description = "Удаление уточки",enabled = true)

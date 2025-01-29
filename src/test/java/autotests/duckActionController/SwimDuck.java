@@ -10,8 +10,8 @@ import io.qameta.allure.Feature;
 import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-@Epic("Тесты на duckActionController")
-@Feature("Эндпоинт /api/duck/action/swim")
+@Epic("duckActionController Tests")
+@Feature("Endpoint /api/duck/action/swim")
 public class SwimDuck extends DuckActionsClient {
 
     @Test(description = "Плавание уточки с правильным (существующим) id", enabled = true)
