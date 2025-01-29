@@ -1,0 +1,357 @@
+{
+  "uid" : "f095c94f7f730a91",
+  "name" : "Correct duck sound with correct(existing) odd id",
+  "fullName" : "autotests.duckActionController.QuackDuck.CorrectOddIdQuacking",
+  "historyId" : "918925e0a21056f916a93ff10b0a804",
+  "time" : {
+    "start" : 1738140842760,
+    "stop" : 1738140842816,
+    "duration" : 56
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "springTestContextBeforeTestMethod",
+    "time" : {
+      "start" : 1738140842753,
+      "stop" : 1738140842754,
+      "duration" : 1
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "springTestContextBeforeTestClass",
+    "time" : {
+      "start" : 1738140842621,
+      "stop" : 1738140842622,
+      "duration" : 1
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "springTestContextPrepareTestInstance",
+    "time" : {
+      "start" : 1738140842623,
+      "stop" : 1738140842625,
+      "duration" : 2
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "before",
+    "time" : {
+      "start" : 1738140842626,
+      "stop" : 1738140842627,
+      "duration" : 1
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "beforeSuite",
+    "time" : {
+      "start" : 1738140839088,
+      "stop" : 1738140840843,
+      "duration" : 1755
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Create duck endpoint",
+      "time" : {
+        "start" : 1738140842763,
+        "stop" : 1738140842780,
+        "duration" : 17
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@7e615c6a"
+      }, {
+        "name" : "body",
+        "value" : "autotests.payloads.createDuck.CreateDuckPayload@3662c887"
+      } ],
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Get duck id",
+      "time" : {
+        "start" : 1738140842781,
+        "stop" : 1738140842785,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@7e615c6a"
+      } ],
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Odd duck id",
+      "time" : {
+        "start" : 1738140842786,
+        "stop" : 1738140842786,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@7e615c6a"
+      }, {
+        "name" : "body",
+        "value" : "autotests.payloads.createDuck.CreateDuckPayload@3662c887"
+      } ],
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Quack duck endpoint",
+      "time" : {
+        "start" : 1738140842786,
+        "stop" : 1738140842801,
+        "duration" : 15
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@7e615c6a"
+      }, {
+        "name" : "id",
+        "value" : "${duckId}"
+      }, {
+        "name" : "repetitionCount",
+        "value" : "1"
+      }, {
+        "name" : "soundCount",
+        "value" : "1"
+      } ],
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Duck validation using resource files",
+      "time" : {
+        "start" : 1738140842801,
+        "stop" : 1738140842804,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@7e615c6a"
+      }, {
+        "name" : "expectedPayload",
+        "value" : "duckActionController/quackDuck/correctIdQuackingOneTimeOneRepeat.json"
+      }, {
+        "name" : "status",
+        "value" : "200 OK"
+      } ],
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0
+    }, {
+      "name" : "Delete duck endpoint",
+      "time" : {
+        "start" : 1738140842804,
+        "stop" : 1738140842816,
+        "duration" : 12
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "runner",
+        "value" : "com.consol.citrus.DefaultTestCaseRunner@7e615c6a"
+      }, {
+        "name" : "id",
+        "value" : "${duckId}"
+      } ],
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 6
+  },
+  "afterStages" : [ {
+    "name" : "springTestContextAfterTestMethod",
+    "time" : {
+      "start" : 1738140842820,
+      "stop" : 1738140842820,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "after",
+    "time" : {
+      "start" : 1738140842865,
+      "stop" : 1738140842865,
+      "duration" : 0
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "springTestContextAfterTestClass",
+    "time" : {
+      "start" : 1738140842866,
+      "stop" : 1738140842867,
+      "duration" : 1
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "afterSuite",
+    "time" : {
+      "start" : 1738140843587,
+      "stop" : 1738140843669,
+      "duration" : 82
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "autotests.duckActionController.QuackDuck"
+  }, {
+    "name" : "testClass",
+    "value" : "autotests.duckActionController.QuackDuck"
+  }, {
+    "name" : "testMethod",
+    "value" : "CorrectOddIdQuacking"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Gradle suite"
+  }, {
+    "name" : "suite",
+    "value" : "Gradle test"
+  }, {
+    "name" : "subSuite",
+    "value" : "autotests.duckActionController.QuackDuck"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-AV9IB0O"
+  }, {
+    "name" : "thread",
+    "value" : "2616@DESKTOP-AV9IB0O.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "feature",
+    "value" : "Endpoint /api/duck/action/quack"
+  }, {
+    "name" : "epic",
+    "value" : "duckActionController Tests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "null"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f095c94f7f730a91.json",
+  "parameterValues" : [ "null" ]
+}

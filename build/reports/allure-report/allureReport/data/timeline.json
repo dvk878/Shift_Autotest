@@ -1,0 +1,377 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-AV9IB0O",
+    "children" : [ {
+      "name" : "2616@DESKTOP-AV9IB0O.Test worker(1)",
+      "children" : [ {
+        "name" : "Duck swimming with correct(existing) id",
+        "uid" : "ef39e1575773b158",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842879,
+          "stop" : 1738140842932,
+          "duration" : 53
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Duck flight with correct(existing) id and wingsState=ACTIVE",
+        "uid" : "48e0fc01e806274b",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140841129,
+          "stop" : 1738140841823,
+          "duration" : 694
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Changing duck color and sound",
+        "uid" : "ef30e369357b621f",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140843481,
+          "stop" : 1738140843525,
+          "duration" : 44
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Creating duck with material=wood",
+        "uid" : "eee9fcb0d7601959",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140843104,
+          "stop" : 1738140843141,
+          "duration" : 37
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Correct duck sound with correct(existing) even id",
+        "uid" : "538af1801992c481",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842636,
+          "stop" : 1738140842693,
+          "duration" : 57
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Duck swimming with correct(existing) id",
+        "uid" : "3e22b65961f9a7be",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842950,
+          "stop" : 1738140842979,
+          "duration" : 29
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Deleting duck",
+        "uid" : "2c52ddc91c90152b",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140843264,
+          "stop" : 1738140843315,
+          "duration" : 51
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Reviewing duck properties with even(existing) id and material=wood",
+        "uid" : "bee3f7612a2e4a21",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842458,
+          "stop" : 1738140842489,
+          "duration" : 31
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Creating duck with material=rubber",
+        "uid" : "7d3d7857ef66e546",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140843196,
+          "stop" : 1738140843205,
+          "duration" : 9
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Reviewing duck properties with odd(existing) id and material=rubber",
+        "uid" : "dc37cfad1f7ad09",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842509,
+          "stop" : 1738140842564,
+          "duration" : 55
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Duck swimming with correct(nonexistent) id",
+        "uid" : "4557eeee1c90bc3",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140843069,
+          "stop" : 1738140843089,
+          "duration" : 20
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Changing duck color and height",
+        "uid" : "185e70c8458f21bc",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140843376,
+          "stop" : 1738140843435,
+          "duration" : 59
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Reviewing duck properties with odd(existing) id and material=rubber",
+        "uid" : "d8ba6aad6c647eec",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842582,
+          "stop" : 1738140842612,
+          "duration" : 30
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Correct duck sound with correct(existing) odd id",
+        "uid" : "5a2436171ecf2bca",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140842829,
+          "stop" : 1738140842856,
+          "duration" : 27
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Duck flight with correct(existing) id and wingsState=UNDEFINED",
+        "uid" : "a001a421d93ea8ca",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140842246,
+          "stop" : 1738140842319,
+          "duration" : 73
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Deleting duck",
+        "uid" : "d9fd43ec4fc212ba",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140843328,
+          "stop" : 1738140843357,
+          "duration" : 29
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Changing duck color and height",
+        "uid" : "f90dafe13140771f",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140843446,
+          "stop" : 1738140843469,
+          "duration" : 23
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Creating duck with material=wood",
+        "uid" : "69b11998b70a61b7",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140843154,
+          "stop" : 1738140843185,
+          "duration" : 31
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Duck flight with correct(existing) id and wingsState=UNDEFINED",
+        "uid" : "e7b68d27f1a0b2eb",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140842333,
+          "stop" : 1738140842361,
+          "duration" : 28
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Creating duck with material=rubber",
+        "uid" : "ae637181d7efe331",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140843217,
+          "stop" : 1738140843246,
+          "duration" : 29
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Duck flight with correct(existing) id and wingsState=FIXED",
+        "uid" : "b3e23956624895d4",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842102,
+          "stop" : 1738140842171,
+          "duration" : 69
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Changing duck color and sound",
+        "uid" : "73de007da51a3cc3",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140843534,
+          "stop" : 1738140843554,
+          "duration" : 20
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Correct duck sound with correct(existing) even id",
+        "uid" : "7b6a32bb937927e1",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842709,
+          "stop" : 1738140842737,
+          "duration" : 28
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Correct duck sound with correct(existing) odd id",
+        "uid" : "f095c94f7f730a91",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140842760,
+          "stop" : 1738140842816,
+          "duration" : 56
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Duck flight with correct(existing) id and wingsState=ACTIVE",
+        "uid" : "5381e7071bebb5d2",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140841858,
+          "stop" : 1738140842082,
+          "duration" : 224
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Reviewing duck properties with even(existing) id and material=wood",
+        "uid" : "8ea4e249d24b8170",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842386,
+          "stop" : 1738140842443,
+          "duration" : 57
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Duck flight with correct(existing) id and wingsState=FIXED",
+        "uid" : "6ed4aa59795a07c4",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842195,
+          "stop" : 1738140842227,
+          "duration" : 32
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Duck swimming with correct(nonexistent) id",
+        "uid" : "1b40b2fbfa5c574f",
+        "parentUid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1738140843000,
+          "stop" : 1738140843057,
+          "duration" : 57
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "a7f2486eb2f7e3d41c0c9cceb7cb30eb"
+    } ],
+    "uid" : "59f31d00e1823a58b972e20cbbe8d245"
+  } ]
+}

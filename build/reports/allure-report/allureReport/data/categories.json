@@ -1,0 +1,206 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "Failed to validate JSON text:\r\n{\"message\":\"I am flying :)\"} Values not equal for entry: 'message', expected 'IвЂ™m flying' but was 'I am flying :)'",
+      "children" : [ {
+        "name" : "Duck flight with correct(existing) id and wingsState=ACTIVE",
+        "uid" : "48e0fc01e806274b",
+        "parentUid" : "d7058bfb7f5d84569a22cd6b3009502b",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140841129,
+          "stop" : 1738140841823,
+          "duration" : 694
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Duck flight with correct(existing) id and wingsState=ACTIVE",
+        "uid" : "5381e7071bebb5d2",
+        "parentUid" : "d7058bfb7f5d84569a22cd6b3009502b",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140841858,
+          "stop" : 1738140842082,
+          "duration" : 224
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "d7058bfb7f5d84569a22cd6b3009502b"
+    }, {
+      "name" : "Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can’t fly' but was 'I can not fly :C'",
+      "children" : [ {
+        "name" : "Duck flight with correct(existing) id and wingsState=FIXED",
+        "uid" : "b3e23956624895d4",
+        "parentUid" : "6a8bcab7f5db9743f1dea9efcdf22523",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842102,
+          "stop" : 1738140842171,
+          "duration" : 69
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Duck flight with correct(existing) id and wingsState=FIXED",
+        "uid" : "6ed4aa59795a07c4",
+        "parentUid" : "6a8bcab7f5db9743f1dea9efcdf22523",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842195,
+          "stop" : 1738140842227,
+          "duration" : 32
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "6a8bcab7f5db9743f1dea9efcdf22523"
+    }, {
+      "name" : "Failed to validate JSON text:\r\n{} Number of JSON entries not equal for element: '$.', expected '5' but was '0'",
+      "children" : [ {
+        "name" : "Reviewing duck properties with even(existing) id and material=wood",
+        "uid" : "8ea4e249d24b8170",
+        "parentUid" : "2ffe9c4a075bf6cc3ff8c8e212023995",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842386,
+          "stop" : 1738140842443,
+          "duration" : 57
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Reviewing duck properties with even(existing) id and material=wood",
+        "uid" : "bee3f7612a2e4a21",
+        "parentUid" : "2ffe9c4a075bf6cc3ff8c8e212023995",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842458,
+          "stop" : 1738140842489,
+          "duration" : 31
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "2ffe9c4a075bf6cc3ff8c8e212023995"
+    }, {
+      "name" : "Failed to validate JSON text:\r\n{\"color\":\"yellow\",\"height\":200.0,\"material\":\"rubber\",\"sound\":\"quack\",\"wingsState\":\"ACTIVE\"} Values not equal for entry: 'height', expected '2.0' but was '200.0'",
+      "children" : [ {
+        "name" : "Reviewing duck properties with odd(existing) id and material=rubber",
+        "uid" : "dc37cfad1f7ad09",
+        "parentUid" : "4cf01ed805e7020b29b94035b387b397",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842509,
+          "stop" : 1738140842564,
+          "duration" : 55
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Reviewing duck properties with odd(existing) id and material=rubber",
+        "uid" : "d8ba6aad6c647eec",
+        "parentUid" : "4cf01ed805e7020b29b94035b387b397",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842582,
+          "stop" : 1738140842612,
+          "duration" : 30
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "4cf01ed805e7020b29b94035b387b397"
+    }, {
+      "name" : "Failed to validate JSON text:\r\n{\"sound\":\"moo\"} Values not equal for entry: 'sound', expected 'quack' but was 'moo'",
+      "children" : [ {
+        "name" : "Correct duck sound with correct(existing) even id",
+        "uid" : "538af1801992c481",
+        "parentUid" : "c15ee7c6415c3f54cec4d9b6c85a0dad",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842636,
+          "stop" : 1738140842693,
+          "duration" : 57
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Correct duck sound with correct(existing) even id",
+        "uid" : "7b6a32bb937927e1",
+        "parentUid" : "c15ee7c6415c3f54cec4d9b6c85a0dad",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842709,
+          "stop" : 1738140842737,
+          "duration" : 28
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "c15ee7c6415c3f54cec4d9b6c85a0dad"
+    }, {
+      "name" : "Validation failed: Values not equal for header element 'citrus_http_reason_phrase', expected 'OK' but was 'NOT_FOUND'",
+      "children" : [ {
+        "name" : "Duck swimming with correct(existing) id",
+        "uid" : "ef39e1575773b158",
+        "parentUid" : "2cfdddf6c3f5fa24fa838a5e77e89e0f",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842879,
+          "stop" : 1738140842932,
+          "duration" : 53
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      }, {
+        "name" : "Duck swimming with correct(existing) id",
+        "uid" : "3e22b65961f9a7be",
+        "parentUid" : "2cfdddf6c3f5fa24fa838a5e77e89e0f",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140842950,
+          "stop" : 1738140842979,
+          "duration" : 29
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "2cfdddf6c3f5fa24fa838a5e77e89e0f"
+    }, {
+      "name" : "Validation failed for column: 'MATERIAL' found value: 'rubber' expected value: wood",
+      "children" : [ {
+        "name" : "Changing duck color and height",
+        "uid" : "f90dafe13140771f",
+        "parentUid" : "fefd868941c6e434e0568cc7fdde6ea2",
+        "status" : "broken",
+        "time" : {
+          "start" : 1738140843446,
+          "stop" : 1738140843469,
+          "duration" : 23
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "null" ]
+      } ],
+      "uid" : "fefd868941c6e434e0568cc7fdde6ea2"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
+}

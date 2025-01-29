@@ -1,0 +1,547 @@
+{
+  "918925e0a21056f916a93ff10b0a804" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f095c94f7f730a91",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140842760,
+        "stop" : 1738140842816,
+        "duration" : 56
+      }
+    } ]
+  },
+  "649b173c2b867e6af3409ddf67a80f97" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "3e22b65961f9a7be",
+      "status" : "broken",
+      "statusDetails" : "Validation failed: Values not equal for header element 'citrus_http_reason_phrase', expected 'OK' but was 'NOT_FOUND'",
+      "time" : {
+        "start" : 1738140842950,
+        "stop" : 1738140842979,
+        "duration" : 29
+      }
+    } ]
+  },
+  "d419b4c2dff4fa9a8c4ea1a2eb1d4e72" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e7b68d27f1a0b2eb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140842333,
+        "stop" : 1738140842361,
+        "duration" : 28
+      }
+    } ]
+  },
+  "c0ad8737a234a2c859cce3568aa89d62" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "48e0fc01e806274b",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{\"message\":\"I am flying :)\"} Values not equal for entry: 'message', expected 'IвЂ™m flying' but was 'I am flying :)'",
+      "time" : {
+        "start" : 1738140841129,
+        "stop" : 1738140841823,
+        "duration" : 694
+      }
+    } ]
+  },
+  "a410183430926d898b79e2845600e9e1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f90dafe13140771f",
+      "status" : "broken",
+      "statusDetails" : "Validation failed for column: 'MATERIAL' found value: 'rubber' expected value: wood",
+      "time" : {
+        "start" : 1738140843446,
+        "stop" : 1738140843469,
+        "duration" : 23
+      }
+    } ]
+  },
+  "49ebf3bc669b05859f74eb21d2cc45ac" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "bee3f7612a2e4a21",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{} Number of JSON entries not equal for element: '$.', expected '5' but was '0'",
+      "time" : {
+        "start" : 1738140842458,
+        "stop" : 1738140842489,
+        "duration" : 31
+      }
+    } ]
+  },
+  "7c747396f5922443efeeba6fc675c86" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "73de007da51a3cc3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140843534,
+        "stop" : 1738140843554,
+        "duration" : 20
+      }
+    } ]
+  },
+  "88150db499a3e945a08f607dd4a7a577" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7b6a32bb937927e1",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{\"sound\":\"moo\"} Values not equal for entry: 'sound', expected 'quack' but was 'moo'",
+      "time" : {
+        "start" : 1738140842709,
+        "stop" : 1738140842737,
+        "duration" : 28
+      }
+    } ]
+  },
+  "d31fe2d19ebcb77f6ddbfc1ce3f7633e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "4557eeee1c90bc3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140843069,
+        "stop" : 1738140843089,
+        "duration" : 20
+      }
+    } ]
+  },
+  "39c603c3cf0e55ab023df94810255b0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "538af1801992c481",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{\"sound\":\"moo\"} Values not equal for entry: 'sound', expected 'quack' but was 'moo'",
+      "time" : {
+        "start" : 1738140842636,
+        "stop" : 1738140842693,
+        "duration" : 57
+      }
+    } ]
+  },
+  "7f73c0cc4320c97b5a49c6e498d062b1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8ea4e249d24b8170",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{} Number of JSON entries not equal for element: '$.', expected '5' but was '0'",
+      "time" : {
+        "start" : 1738140842386,
+        "stop" : 1738140842443,
+        "duration" : 57
+      }
+    } ]
+  },
+  "1a403342ad75b99df40aadef287a8ca1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5a2436171ecf2bca",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140842829,
+        "stop" : 1738140842856,
+        "duration" : 27
+      }
+    } ]
+  },
+  "9fea02723ec46c0bb4897f9332b863b3" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "dc37cfad1f7ad09",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{\"color\":\"yellow\",\"height\":200.0,\"material\":\"rubber\",\"sound\":\"quack\",\"wingsState\":\"ACTIVE\"} Values not equal for entry: 'height', expected '2.0' but was '200.0'",
+      "time" : {
+        "start" : 1738140842509,
+        "stop" : 1738140842564,
+        "duration" : 55
+      }
+    } ]
+  },
+  "b4c2d35af2474ca0673fc6e51214659" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d8ba6aad6c647eec",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{\"color\":\"yellow\",\"height\":200.0,\"material\":\"rubber\",\"sound\":\"quack\",\"wingsState\":\"ACTIVE\"} Values not equal for entry: 'height', expected '2.0' but was '200.0'",
+      "time" : {
+        "start" : 1738140842582,
+        "stop" : 1738140842612,
+        "duration" : 30
+      }
+    } ]
+  },
+  "f8c7d3fd478d09bd777c15c0dd2a7b4c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ae637181d7efe331",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140843217,
+        "stop" : 1738140843246,
+        "duration" : 29
+      }
+    } ]
+  },
+  "e61c14aeb6f41fb69324a763fb1ad365" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ef39e1575773b158",
+      "status" : "broken",
+      "statusDetails" : "Validation failed: Values not equal for header element 'citrus_http_reason_phrase', expected 'OK' but was 'NOT_FOUND'",
+      "time" : {
+        "start" : 1738140842879,
+        "stop" : 1738140842932,
+        "duration" : 53
+      }
+    } ]
+  },
+  "84f1d8b689f461234e46a5b0a4d4e03e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b3e23956624895d4",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can’t fly' but was 'I can not fly :C'",
+      "time" : {
+        "start" : 1738140842102,
+        "stop" : 1738140842171,
+        "duration" : 69
+      }
+    } ]
+  },
+  "47bd8108196dcc3301bc3bc86c6fb93c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6ed4aa59795a07c4",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{\"message\":\"I can not fly :C\"} Values not equal for entry: 'message', expected 'I can’t fly' but was 'I can not fly :C'",
+      "time" : {
+        "start" : 1738140842195,
+        "stop" : 1738140842227,
+        "duration" : 32
+      }
+    } ]
+  },
+  "a09f83edc8bac6f76af98f78ea551c15" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ef30e369357b621f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140843481,
+        "stop" : 1738140843525,
+        "duration" : 44
+      }
+    } ]
+  },
+  "599de20d73041fcfe36251550a3a56c1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a001a421d93ea8ca",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140842246,
+        "stop" : 1738140842319,
+        "duration" : 73
+      }
+    } ]
+  },
+  "592e0979bfd3c61e6cda598f38cec0ae" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2c52ddc91c90152b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140843264,
+        "stop" : 1738140843315,
+        "duration" : 51
+      }
+    } ]
+  },
+  "1b05372aaaa24474934fec09f8539c0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5381e7071bebb5d2",
+      "status" : "broken",
+      "statusDetails" : "Failed to validate JSON text:\r\n{\"message\":\"I am flying :)\"} Values not equal for entry: 'message', expected 'IвЂ™m flying' but was 'I am flying :)'",
+      "time" : {
+        "start" : 1738140841858,
+        "stop" : 1738140842082,
+        "duration" : 224
+      }
+    } ]
+  },
+  "c000c74a8f343b6cf182fcf1b60684d0" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "69b11998b70a61b7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140843154,
+        "stop" : 1738140843185,
+        "duration" : 31
+      }
+    } ]
+  },
+  "7a2bf3fe7379f66da3d233baa31327ed" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1b40b2fbfa5c574f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140843000,
+        "stop" : 1738140843057,
+        "duration" : 57
+      }
+    } ]
+  },
+  "a23e013443ab2bddc661cade00e8dc37" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "eee9fcb0d7601959",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140843104,
+        "stop" : 1738140843141,
+        "duration" : 37
+      }
+    } ]
+  },
+  "297abbbb03f61cbd51cf72b8809eccf6" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7d3d7857ef66e546",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140843196,
+        "stop" : 1738140843205,
+        "duration" : 9
+      }
+    } ]
+  },
+  "ccd6baa9815dd448608627face1f6068" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d9fd43ec4fc212ba",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140843328,
+        "stop" : 1738140843357,
+        "duration" : 29
+      }
+    } ]
+  },
+  "6f83eb2dccd98cb242d2742afbea8172" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "185e70c8458f21bc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1738140843376,
+        "stop" : 1738140843435,
+        "duration" : 59
+      }
+    } ]
+  }
+}
