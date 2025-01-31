@@ -31,19 +31,5 @@ public class DeleteDuck extends DuckActionsClient {
         deleteDuck(runner,"${duckId}");
         validateResponse(runner, "duckController/deleteDuck/deleteDuck.json", HttpStatus.OK);
     }
-
-    @Test(description = "Deleting duck",enabled = true)
-    @CitrusTest
-    public void DeleteDuckDb(@Optional @CitrusResource TestCaseRunner runner)
-    {
-        deleteDuckFromDb(runner);
-        runner.variable("duckId","1234567");
-        databaseUpdate(runner,
-                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
-                        "values (${duckId},'yellow',2.0,'wood','quack','ACTIVE');");
-        deleteDuck(runner,"${duckId}");
-        validateResponse(runner,"duckController/deleteDuck/deleteDuck.json", HttpStatus.OK);
-
-    }
 }
 

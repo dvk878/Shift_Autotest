@@ -16,7 +16,7 @@ public class QuackDuck extends DuckActionsClient {
 
     @Test(description = "Correct duck sound with correct(existing) odd id", enabled = true)
     @CitrusTest
-    public void CorrectOddIdQuacking(@Optional @CitrusResource TestCaseRunner runner) {
+    public void correctOddIdQuacking(@Optional @CitrusResource TestCaseRunner runner) {
         CreateDuckPayload crDuck=new CreateDuckPayload()
                 .color("yellow")
                 .height(2.0)
@@ -34,7 +34,7 @@ public class QuackDuck extends DuckActionsClient {
 
     @Test(description = "Correct duck sound with correct(existing) odd id", enabled = true)
     @CitrusTest
-    public void CorrectOddIdQuackingDb(@Optional @CitrusResource TestCaseRunner runner) {
+    public void correctOddIdQuackingDb(@Optional @CitrusResource TestCaseRunner runner) {
         deleteDuckFromDb(runner);
         runner.variable("duckId","1234567");
         databaseUpdate(runner,
@@ -48,7 +48,7 @@ public class QuackDuck extends DuckActionsClient {
 
     @Test(description = "Correct duck sound with correct(existing) even id", enabled = true)
     @CitrusTest
-    public void CorrectEvenIdQuacking(@Optional @CitrusResource TestCaseRunner runner) {
+    public void correctEvenIdQuacking(@Optional @CitrusResource TestCaseRunner runner) {
         CreateDuckPayload crDuck=new CreateDuckPayload()
                 .color("yellow")
                 .height(2.0)
@@ -66,7 +66,7 @@ public class QuackDuck extends DuckActionsClient {
 
     @Test(description = "Correct duck sound with correct(existing) even id", enabled = true)
     @CitrusTest
-    public void CorrectEvenIdQuackingId(@Optional @CitrusResource TestCaseRunner runner) {
+    public void correctEvenIdQuackingId(@Optional @CitrusResource TestCaseRunner runner) {
         deleteDuckFromDb(runner);
         runner.variable("duckId","1234568");
         deleteDuckFromDb(runner);
